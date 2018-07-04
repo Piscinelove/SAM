@@ -32,7 +32,7 @@ namespace CurvedUI
         // Update is called once per frame
         void Update()
         {
-            if((Application.isEditor || !runInEditorOnly) && !UnityEngine.VR.VRSettings.enabled)
+            if((Application.isEditor || !runInEditorOnly) && !UnityEngine.XR.XRSettings.enabled)
             {
                 CameraObject.localEulerAngles = new Vector3(Input.mousePosition.y.Remap(0, Screen.height, rotationMargin, -rotationMargin),
                                                        Input.mousePosition.x.Remap(0, Screen.width, -rotationMargin, rotationMargin),
