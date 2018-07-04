@@ -586,7 +586,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 867105235}
-  - component: {fileID: 867105234}
+  - component: {fileID: 867105236}
   m_Layer: 0
   m_Name: ExampleStreaming
   m_TagString: Untagged
@@ -594,23 +594,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &867105234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 867105233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c5299c1c838a8c44b49ecc9254704e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _serviceUrl: https://stream.watsonplatform.net/speech-to-text/api
-  ResultsField: {fileID: 387122017}
-  _username: 96763730-df56-4818-958d-5e5a3f6a8d8e
-  _password: EFxxDMSqhiX3
-  _iamApikey: 
-  _iamUrl: 
 --- !u!4 &867105235
 Transform:
   m_ObjectHideFlags: 0
@@ -624,6 +607,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &867105236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 867105233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dca77ce957cd4854688262a7bf407b04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _serviceUrl: https://stream.watsonplatform.net/speech-to-text/api
+  ResultsField: {fileID: 387122017}
+  _username: 96763730-df56-4818-958d-5e5a3f6a8d8e
+  _password: EFxxDMSqhiX3
+  _iamApikey: 
+  _iamUrl: 
+  _language: fr-FR_BroadbandModel
 --- !u!1 &1152647322
 GameObject:
   m_ObjectHideFlags: 0
