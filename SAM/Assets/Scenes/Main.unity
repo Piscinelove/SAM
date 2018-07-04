@@ -624,7 +624,7 @@ MonoBehaviour:
   _password: EFxxDMSqhiX3
   _iamApikey: 
   _iamUrl: 
-  _language: fr-FR_BroadbandModel
+  _language: en-US_NarrowbandModel
 --- !u!1 &1152647322
 GameObject:
   m_ObjectHideFlags: 0
