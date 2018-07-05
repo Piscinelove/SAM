@@ -65,7 +65,7 @@ public class SceneSpeechStreaming : MonoBehaviour
 
     private string _runningprocess = "AIVoiceController";
 
-    private SpeechToText _service;
+    private SpeechToText _speechToText;
 
     void Start()
     {
@@ -102,8 +102,8 @@ public class SceneSpeechStreaming : MonoBehaviour
             throw new WatsonException("Please provide either username and password or IAM apikey to authenticate the service.");
         }
 
-        _service = new SpeechToText(credentials);
-        _service.StreamMultipart = true;
+        _speechToText = new SpeechToText(credentials);
+        _speechToText.StreamMultipart = true;
 
         Active = true;
         StartRecording();
@@ -111,29 +111,30 @@ public class SceneSpeechStreaming : MonoBehaviour
 
     public bool Active
     {
-        get { return _service.IsListening; }
+        get { return _speechToText.IsListening; }
         set
         {
-            if (value && !_service.IsListening)
+            if (value && !_speechToText.IsListening)
             {
-                _service.RecognizeModel = _language;
-                _service.DetectSilence = true;
-                _service.EnableWordConfidence = true;
-                _service.EnableTimestamps = true;
-                _service.SilenceThreshold = 0.01f;
-                _service.MaxAlternatives = 0;
-                _service.EnableInterimResults = true;
-                _service.OnError = OnError;
-                _service.InactivityTimeout = -1;
-                _service.ProfanityFilter = false;
-                _service.SmartFormatting = true;
-                _service.SpeakerLabels = false;
-                _service.WordAlternativesThreshold = null;
-                _service.StartListening(OnRecognize, OnRecognizeSpeaker);
+                _speechToText.RecognizeModel = _language;
+                //_service.SmartFormatting = true;
+                _speechToText.DetectSilence = true;
+                _speechToText.EnableWordConfidence = true;
+                _speechToText.EnableTimestamps = true;
+                _speechToText.SilenceThreshold = 0.00f;
+                _speechToText.MaxAlternatives = 0;
+                _speechToText.EnableInterimResults = true;
+                _speechToText.OnError = OnError;
+                _speechToText.InactivityTimeout = -1;
+                _speechToText.ProfanityFilter = false;
+                _speechToText.SmartFormatting = true;
+                _speechToText.SpeakerLabels = false;
+                _speechToText.WordAlternativesThreshold = null;
+                _speechToText.StartListening(OnRecognize, OnRecognizeSpeaker);
             }
-            else if (!value && _service.IsListening)
+            else if (!value && _speechToText.IsListening)
             {
-                _service.StopListening();
+                _speechToText.StopListening();
             }
         }
     }
@@ -308,7 +309,7 @@ public class SceneSpeechStreaming : MonoBehaviour
                 record.Clip.SetData(samplesChunk, 0);
 
                 // 20171018 RMPickering - And here we send the clip with "audioChunk" audiodata to the Watson STT listener.
-                _service.OnListen(record);
+                _speechToText.OnListen(record);
 
                 // 20171018 RMPickering - Remember which block we just copied!
                 readPos += chunkSize * downSampleFactor;

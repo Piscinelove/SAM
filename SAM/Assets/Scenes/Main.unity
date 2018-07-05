@@ -624,7 +624,7 @@ MonoBehaviour:
   _password: EFxxDMSqhiX3
   _iamApikey: 
   _iamUrl: 
-  _language: en-US_NarrowbandModel
+  _language: en-US_BroadbandModel
 --- !u!1 &1152647322
 GameObject:
   m_ObjectHideFlags: 0
@@ -836,6 +836,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 45, y: 130, z: 90}
+--- !u!1 &1726783570
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1726783572}
+  - component: {fileID: 1726783571}
+  m_Layer: 0
+  m_Name: ExampleConversation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1726783571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1726783570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e50432d5841e244bdc6499afaf3f72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _serviceUrl: https://gateway.watsonplatform.net/assistant/api
+  _workspaceId: 01d1b097-0dc9-4250-9dc8-768e0c17186f
+  _versionDate: 2018-02-16
+  _username: 04a1d88a-3e81-418c-9c5a-aba244cb7b87
+  _password: KgKo10lE3Uw5
+  _iamApikey: 
+  _iamUrl: 
+--- !u!4 &1726783572
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1726783570}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 479.8696, y: 492.42166, z: -173.21722}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1748423329
 GameObject:
   m_ObjectHideFlags: 0
