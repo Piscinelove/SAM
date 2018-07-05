@@ -56,6 +56,7 @@ public class WatsonConversation : MonoBehaviour
 
     public Text ResultsField;
     private Conversation _service;
+    public Speak _textToSpeech;
 
     private string[] _questionArray = { "qui es tu ?", "can you turn on the wipers", "can you turn off the wipers", "can you turn down the ac", "can you unlock the door" };
     private fsSerializer _serializer = new fsSerializer();
@@ -152,6 +153,7 @@ public class WatsonConversation : MonoBehaviour
 
 
         ResultsField.text = messageResponse.output.text[0];
+        _textToSpeech.Synthesize(messageResponse.output.text[0]);
 
 
         //  Set context for next round of messaging
