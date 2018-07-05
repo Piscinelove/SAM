@@ -66,6 +66,8 @@ public class SceneSpeechStreaming : MonoBehaviour
     private string _runningprocess = "AIVoiceController";
 
     private SpeechToText _speechToText;
+    public WatsonConversation _conversation;
+
 
     void Start()
     {
@@ -346,7 +348,10 @@ public class SceneSpeechStreaming : MonoBehaviour
                     //ResultsField.text = text;
                     string text = alt.transcript;
                     Log.Debug("{0}", string.Format("{1} ({2}, {3:0.00})\n", _runningprocess, text, res.final ? "Final" : "Interim", alt.confidence));
-                    ResultsField.text = text;
+                    //ResultsField.text = text;
+                    if(res.final)
+                        _conversation.AskQuestion(text);
+                    //Runnable.Run(_conversation.TransferMessage(text));
                 }
 
                 /*if (res.keywords_result != null && res.keywords_result.keyword != null)

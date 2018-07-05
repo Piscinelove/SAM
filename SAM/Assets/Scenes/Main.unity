@@ -625,6 +625,7 @@ MonoBehaviour:
   _iamApikey: 
   _iamUrl: 
   _language: en-US_BroadbandModel
+  _conversation: {fileID: 1726783571}
 --- !u!1 &1152647322
 GameObject:
   m_ObjectHideFlags: 0
@@ -864,12 +865,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _serviceUrl: https://gateway.watsonplatform.net/assistant/api
-  _workspaceId: 01d1b097-0dc9-4250-9dc8-768e0c17186f
+  _workspaceId: 007c08e4-8367-4619-9e27-3293a9cef3ce
   _versionDate: 2018-02-16
   _username: 04a1d88a-3e81-418c-9c5a-aba244cb7b87
   _password: KgKo10lE3Uw5
   _iamApikey: 
   _iamUrl: 
+  ResultsField: {fileID: 387122017}
 --- !u!4 &1726783572
 Transform:
   m_ObjectHideFlags: 0

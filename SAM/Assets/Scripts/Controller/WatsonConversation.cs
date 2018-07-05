@@ -23,6 +23,7 @@ using System.Collections;
 using FullSerializer;
 using System.Collections.Generic;
 using IBM.Watson.DeveloperCloud.Connection;
+using UnityEngine.UI;
 
 public class WatsonConversation : MonoBehaviour
 {
@@ -53,6 +54,7 @@ public class WatsonConversation : MonoBehaviour
     private string _iamUrl;
     #endregion
 
+    public Text ResultsField;
     private Conversation _service;
 
     private string[] _questionArray = { "qui es tu ?", "can you turn on the wipers", "can you turn off the wipers", "can you turn down the ac", "can you unlock the door" };
@@ -99,56 +101,30 @@ public class WatsonConversation : MonoBehaviour
         _service = new Conversation(credentials);
         _service.VersionDate = _versionDate;
 
-        Runnable.Run(Examples());
+        //Runnable.Run(SendMessage());
     }
 
-    private IEnumerator Examples()
+    public IEnumerator TransferMessage(string message)
     {
-        if (!_service.Message(OnMessage, OnFail, _workspaceId, "hello"))
-            Log.Debug("ExampleConversation.Message()", "Failed to message!");
+        //if (!_service.Message(OnMessage, OnFail, _workspaceId, "hello"))
+            //Log.Debug("ExampleConversation.Message()", "Failed to message!");
 
         while (_waitingForResponse)
             yield return null;
 
         _waitingForResponse = true;
-        _questionCount++;
-
-        AskQuestion();
-        while (_waitingForResponse)
-            yield return null;
-
-        _questionCount++;
-
-        _waitingForResponse = true;
-
-        AskQuestion();
-        while (_waitingForResponse)
-            yield return null;
-        _questionCount++;
-
-        _waitingForResponse = true;
-
-        AskQuestion();
-        while (_waitingForResponse)
-            yield return null;
-        _questionCount++;
-
-        _waitingForResponse = true;
-
-        AskQuestion();
-        while (_waitingForResponse)
-            yield return null;
+        AskQuestion(message);
 
         Log.Debug("ExampleConversation.Examples()", "Conversation examples complete.");
     }
 
-    private void AskQuestion()
+    public void AskQuestion(string message)
     {
         MessageRequest messageRequest = new MessageRequest()
         {
             input = new Dictionary<string, object>()
             {
-                { "text", _questionArray[_questionCount] }
+                { "text", message }
             },
             context = _context
         };
@@ -173,6 +149,10 @@ public class WatsonConversation : MonoBehaviour
         r = _serializer.TryDeserialize(fsdata, obj.GetType(), ref obj);
         if (!r.Succeeded)
             throw new WatsonException(r.FormattedMessages);
+
+
+        ResultsField.text = messageResponse.output.text[0];
+
 
         //  Set context for next round of messaging
         object _tempContext = null;
