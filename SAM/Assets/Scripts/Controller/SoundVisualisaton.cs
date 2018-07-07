@@ -27,7 +27,7 @@ public class SoundVisualisaton : MonoBehaviour {
 
     private Transform[] visualisationList;
     private float[] visualisationScale;
-    private int amountofVisual = 8;
+    public int test = 8;
 
     public SoundVisualisaton(AudioSource source)
     {
@@ -49,11 +49,11 @@ public class SoundVisualisaton : MonoBehaviour {
 
     private void SpawnLine()
     {
-        visualisationScale = new float[amountofVisual];
-        visualisationList = new Transform[amountofVisual];
+        visualisationScale = new float[test];
+        visualisationList = new Transform[test];
 
         //GameObject[] cubes = GameObject.FindGameObjectsWithTag("SoundVisualcube");
-        for (int i = 0; i < amountofVisual; i++)
+        for (int i = 0; i < test; i++)
         {
             //GameObject go = GameObject.CreatePrimitive(PrimitiveType.Cube) as GameObject;
             //GameObject go = cubes[i];
@@ -81,11 +81,12 @@ public class SoundVisualisaton : MonoBehaviour {
     private void UpdateVisual()
     {
         int spectrumIndex = 0;
-        int averageSize = (int) ((SAMPLE_SIZE* keePercentage) / amountofVisual);
+        int averageSize = (int) ((SAMPLE_SIZE* keePercentage) / test);
 
-        for (int visualIndex = 0; visualIndex < amountofVisual; visualIndex++)
+        Debug.Log(" Amount of Visual : " + test);
+        for (int visualIndex = 0; visualIndex < test; visualIndex++)
         {
-
+            Debug.Log("VisualIndex : " + visualIndex + " Amount of Visual : " + test);
             float sum = 0;
             for (int j = 0; j < averageSize; j++)
             {
@@ -102,12 +103,8 @@ public class SoundVisualisaton : MonoBehaviour {
             if (visualisationScale[visualIndex] > maxVisualisationScale)
                 visualisationScale[visualIndex] = maxVisualisationScale;
 
-            visualisationList[visualIndex].localScale = Vector3.one + Vector3.up * visualisationScale[visualIndex];
-        }
-
-        for(int k = 0; k < 10; k++)
-        {
-            visualisationList[k].localScale = new Vector3(20, 49, 20);
+            visualisationList[visualIndex].localScale = new Vector3(visualisationList[visualIndex].localScale.x, (20+20*visualisationScale[visualIndex]), visualisationList[visualIndex].localScale.z);
+                //Vector3.one + Vector3.up * visualisationScale[visualIndex];
         }
     }
 
