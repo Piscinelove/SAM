@@ -95,9 +95,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _AtmoFalloff: 1
-    - _AtmoShininess: 3
-    - _AtmoSize: 1.05
+    - _AtmoFalloff: 2
+    - _AtmoShininess: 1
+    - _AtmoSize: 1.02
     - _AtmosFalloff: 1
     - _AtmosphereFalloff: 1
     - _AtmosphereShininess: 1.5
@@ -125,7 +125,7 @@ Material:
     - _Size: 1.1
     - _SrcBlend: 1
     - _SurfaceFalloff: 2
-    - _SurfaceShininess: 1.5
+    - _SurfaceShininess: 0
     - _Transparency: 1
     - _TransparencyAtmosphere: 1
     - _TransparencyPlanet: 1

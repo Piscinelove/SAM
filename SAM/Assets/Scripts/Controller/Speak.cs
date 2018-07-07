@@ -70,6 +70,10 @@ public class Speak : MonoBehaviour
     private bool _deleteCustomizationWordTested = false;
     private bool _getCustomizationWordTested = false;
 
+    public AudioSource source;
+
+
+
     void Start()
     {
         LogSystem.InstallDefaultReactors();
@@ -139,7 +143,8 @@ public class Speak : MonoBehaviour
         if (Application.isPlaying && clip != null)
         {
             GameObject audioObject = new GameObject("AudioObject");
-            AudioSource source = audioObject.AddComponent<AudioSource>();
+            //AudioSource source = audioObject.AddComponent<AudioSource>();
+            source = audioObject.AddComponent<AudioSource>();
             source.spatialBlend = 0.0f;
             source.loop = false;
             source.clip = clip;
