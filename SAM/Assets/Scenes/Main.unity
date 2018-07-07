@@ -262,7 +262,7 @@ GameObject:
   - component: {fileID: 68315414}
   - component: {fileID: 68315413}
   m_Layer: 0
-  m_Name: Cube (4)
+  m_Name: Sound5
   m_TagString: SoundVisualCube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -328,11 +328,11 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 68315412}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 36.6, y: 306.99957, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 36.592415, y: 21, z: -0.00624798}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children: []
-  m_Father: {fileID: 838947887}
+  m_Father: {fileID: 968124515}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &78525707
@@ -4965,7 +4965,7 @@ GameObject:
   - component: {fileID: 128899309}
   - component: {fileID: 128899308}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: Sound4
   m_TagString: SoundVisualCube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5031,11 +5031,11 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 128899307}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.3, y: 307, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 18.302217, y: 21, z: 0.016979804}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children: []
-  m_Father: {fileID: 838947887}
+  m_Father: {fileID: 968124515}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &190765862
@@ -5640,7 +5640,7 @@ GameObject:
   - component: {fileID: 463122733}
   - component: {fileID: 463122732}
   m_Layer: 0
-  m_Name: Cube (5)
+  m_Name: Sound6
   m_TagString: SoundVisualCube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5706,11 +5706,11 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 463122731}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -54.9, y: 306.99957, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -54.894585, y: 21, z: -0.010878836}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children: []
-  m_Father: {fileID: 838947887}
+  m_Father: {fileID: 968124515}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &539771942
@@ -5928,7 +5928,7 @@ GameObject:
   - component: {fileID: 667131856}
   - component: {fileID: 667131855}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: Sound3
   m_TagString: SoundVisualCube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5994,11 +5994,11 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 667131854}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -36.6, y: 306.99957, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -36.592407, y: 21, z: 0.006174474}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children: []
-  m_Father: {fileID: 838947887}
+  m_Father: {fileID: 968124515}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &803948129
@@ -6013,7 +6013,7 @@ GameObject:
   - component: {fileID: 803948131}
   - component: {fileID: 803948130}
   m_Layer: 0
-  m_Name: Cube (6)
+  m_Name: Sound7
   m_TagString: SoundVisualCube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6079,11 +6079,11 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 803948129}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 54.9, y: 306.99957, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 54.89463, y: 21, z: 0.010878836}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children: []
-  m_Father: {fileID: 838947887}
+  m_Father: {fileID: 968124515}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &838947886
@@ -6114,14 +6114,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 984488190}
-  - {fileID: 2015232819}
-  - {fileID: 667131858}
-  - {fileID: 128899311}
-  - {fileID: 68315416}
-  - {fileID: 463122735}
-  - {fileID: 803948133}
-  - {fileID: 1088507781}
+  - {fileID: 968124515}
   m_Father: {fileID: 1159223343}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6460,6 +6453,82 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 933614736}
+--- !u!1 &968124514
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 968124515}
+  - component: {fileID: 968124517}
+  - component: {fileID: 968124516}
+  m_Layer: 0
+  m_Name: Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &968124515
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 968124514}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 984488190}
+  - {fileID: 2015232819}
+  - {fileID: 667131858}
+  - {fileID: 128899311}
+  - {fileID: 68315416}
+  - {fileID: 463122735}
+  - {fileID: 803948133}
+  - {fileID: 1088507781}
+  m_Father: {fileID: 838947887}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.8}
+  m_AnchorMax: {x: 1, y: 0.99}
+  m_AnchoredPosition: {x: -9.5, y: 0}
+  m_SizeDelta: {x: -1, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &968124516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 968124514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &968124517
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 968124514}
 --- !u!1 &984488186
 GameObject:
   m_ObjectHideFlags: 0
@@ -6472,7 +6541,7 @@ GameObject:
   - component: {fileID: 984488188}
   - component: {fileID: 984488187}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Sound1
   m_TagString: SoundVisualCube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6538,11 +6607,11 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 984488186}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.3, y: 306.99957, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -18.30218, y: 21, z: -0.017126815}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children: []
-  m_Father: {fileID: 838947887}
+  m_Father: {fileID: 968124515}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1088507780
@@ -6557,7 +6626,7 @@ GameObject:
   - component: {fileID: 1088507783}
   - component: {fileID: 1088507782}
   m_Layer: 0
-  m_Name: Cube (7)
+  m_Name: Sound8
   m_TagString: SoundVisualCube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6569,11 +6638,11 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1088507780}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 73.2, y: 306.99957, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 73.20335, y: 21, z: -0.009188206}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children: []
-  m_Father: {fileID: 838947887}
+  m_Father: {fileID: 968124515}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1088507782
@@ -12081,7 +12150,7 @@ GameObject:
   - component: {fileID: 2015232817}
   - component: {fileID: 2015232816}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Sound2
   m_TagString: SoundVisualCube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12147,11 +12216,11 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2015232815}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 306.99957, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 21, z: 0}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children: []
-  m_Father: {fileID: 838947887}
+  m_Father: {fileID: 968124515}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2093765014
