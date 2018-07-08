@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: a07fadb24ea940240afba3afc1a692cc, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: b9be0c15efe8ad9489fdeead114d8ec5, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2093765015}
-  m_IndirectSpecularColor: {r: 0.004230134, g: 0.019571882, b: 0.03105972, a: 1}
+  m_IndirectSpecularColor: {r: 0.00020667736, g: 0.0002077789, b: 0.00020636307, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -385,10 +385,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DoNotTesselate: 0
   savedPos: {x: 0, y: 0, z: 0}
-  savedUp: {x: 0, y: 1, z: 0}
-  savedRectSize: {x: 158, y: 16}
-  savedColor: {r: 1, g: 1, b: 1, a: 1}
-  savedTextUV0: {x: 0.05078125, y: 0.125}
+  savedUp: {x: 0, y: 0, z: 0}
+  savedRectSize: {x: 0, y: 0}
+  savedColor: {r: 0, g: 0, b: 0, a: 0}
+  savedTextUV0: {x: 0, y: 0}
   savedFill: 0
 --- !u!114 &78525710
 MonoBehaviour:
@@ -5066,9 +5066,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5801c659dca30ba4992cbabcbf3270ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _serviceUrl: https://stream.watsonplatform.net/text-to-speech/api
-  _username: bb8b4857-2a8b-444b-af9a-455a8d3856f5
-  _password: O3604MFYOhQm
+  _serviceUrl: 
+  _username: 
+  _password: 
   _iamApikey: 
   _iamUrl: 
   source: {fileID: 0}
@@ -5083,7 +5083,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &190765865
 MonoBehaviour:
@@ -5096,22 +5096,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a27bb8e0a0dcd64c9ebc43094194d75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubes:
-  - {fileID: 984488186}
-  - {fileID: 2015232815}
-  - {fileID: 667131854}
-  - {fileID: 128899307}
-  - {fileID: 68315412}
-  - {fileID: 463122731}
-  - {fileID: 803948129}
-  - {fileID: 1088507780}
-  maxVisualisationScale: 30
-  visualModifier: 175
-  smoothSpeed: 10
-  keePercentage: 0.1
+  cubes: []
+  maxVisualisationScale: 0
+  visualModifier: 0
+  smoothSpeed: 0
+  keePercentage: 0
   rmsValue: 0
   dbValue: 0
-  test: 8
+  test: 0
 --- !u!1 &266552749
 GameObject:
   m_ObjectHideFlags: 0
@@ -5304,10 +5296,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68ec2fe99d1108b9d0006a298d76c639, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axes: 2
-  sensitivityX: 5
-  sensitivityY: 5
-  minimumX: 0
+  axes: 0
+  sensitivityX: 15
+  sensitivityY: 15
+  minimumX: -360
   maximumX: 360
   minimumY: -60
   maximumY: 60
@@ -5470,10 +5462,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DoNotTesselate: 0
   savedPos: {x: 0, y: 0, z: 0}
-  savedUp: {x: 0, y: 1, z: 0}
-  savedRectSize: {x: 158, y: 16}
-  savedColor: {r: 1, g: 1, b: 1, a: 1}
-  savedTextUV0: {x: 0.05078125, y: 0.125}
+  savedUp: {x: 0, y: 0, z: 0}
+  savedRectSize: {x: 0, y: 0}
+  savedColor: {r: 0, g: 0, b: 0, a: 0}
+  savedTextUV0: {x: 0, y: 0}
   savedFill: 0
 --- !u!1001 &391701843
 Prefab:
@@ -5859,10 +5851,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DoNotTesselate: 0
   savedPos: {x: 0, y: 0, z: 0}
-  savedUp: {x: 0, y: 1, z: 0}
-  savedRectSize: {x: 158, y: 16}
-  savedColor: {r: 1, g: 1, b: 1, a: 1}
-  savedTextUV0: {x: 0.05078125, y: 0.125}
+  savedUp: {x: 0, y: 0, z: 0}
+  savedRectSize: {x: 0, y: 0}
+  savedColor: {r: 0, g: 0, b: 0, a: 0}
+  savedTextUV0: {x: 0, y: 0}
   savedFill: 0
 --- !u!114 &567958158
 MonoBehaviour:
@@ -6277,8 +6269,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.381646, y: 2.3028982, z: 0.00048828125}
-  m_Center: {x: -0.06146371, y: 0.24480964, z: -0.00024414062}
+  m_Size: {x: 3.5929952, y: 2.3028982, z: 0}
+  m_Center: {x: -1.1670918, y: 0.24480964, z: -0.00048828125}
 --- !u!114 &753494733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6290,6 +6282,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3ce171825685f744bc37f797a0440b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zooming: 0
+  zoomSpeed: 0
+  camera: {fileID: 0}
 --- !u!1 &803948129
 GameObject:
   m_ObjectHideFlags: 0
@@ -6412,7 +6407,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8a2ecdc9357d87d429af6f58cafb5839, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 8a2ecdc9357d87d429af6f58cafb5839, type: 3}
       propertyPath: m_Name
@@ -6510,6 +6505,22 @@ Prefab:
     - {fileID: 2300000, guid: 8a2ecdc9357d87d429af6f58cafb5839, type: 3}
   m_ParentPrefab: {fileID: 100100000, guid: 8a2ecdc9357d87d429af6f58cafb5839, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &810919652 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100002, guid: c245e7c17d130294bbc569fbbac5fdcc, type: 3}
+  m_PrefabInternal: {fileID: 980743962}
+--- !u!65 &810919654
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 810919652}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 158.7099, y: 106.29975, z: 131.83557}
+  m_Center: {x: 4.355497, y: 29.061445, z: -16.331257}
 --- !u!1 &838947886
 GameObject:
   m_ObjectHideFlags: 0
@@ -6665,7 +6676,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &853103490
 MonoBehaviour:
@@ -6801,14 +6812,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca77ce957cd4854688262a7bf407b04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _serviceUrl: https://stream.watsonplatform.net/speech-to-text/api
-  ResultsField: {fileID: 567958159}
-  _username: 96763730-df56-4818-958d-5e5a3f6a8d8e
-  _password: EFxxDMSqhiX3
+  _serviceUrl: 
+  ResultsField: {fileID: 0}
+  _username: 
+  _password: 
   _iamApikey: 
   _iamUrl: 
-  _language: en-US_BroadbandModel
-  _conversation: {fileID: 1726783571}
+  _language: 
+  _conversation: {fileID: 0}
 --- !u!1 &933614736
 GameObject:
   m_ObjectHideFlags: 0
@@ -6953,6 +6964,80 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 968124514}
+--- !u!1001 &980743962
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400002, guid: c245e7c17d130294bbc569fbbac5fdcc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 639.5158
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: c245e7c17d130294bbc569fbbac5fdcc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: c245e7c17d130294bbc569fbbac5fdcc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 525.14484
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: c245e7c17d130294bbc569fbbac5fdcc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: c245e7c17d130294bbc569fbbac5fdcc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.9616612
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: c245e7c17d130294bbc569fbbac5fdcc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: c245e7c17d130294bbc569fbbac5fdcc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.27424034
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: c245e7c17d130294bbc569fbbac5fdcc, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: c245e7c17d130294bbc569fbbac5fdcc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 75e3d5d9575c11b4fb4c8db7a328c9c2, type: 2}
+    - target: {fileID: 100002, guid: c245e7c17d130294bbc569fbbac5fdcc, type: 3}
+      propertyPath: m_Name
+      value: Apollo Lunar Module
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: c245e7c17d130294bbc569fbbac5fdcc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.144
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: c245e7c17d130294bbc569fbbac5fdcc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.14400002
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: c245e7c17d130294bbc569fbbac5fdcc, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.14400002
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: c245e7c17d130294bbc569fbbac5fdcc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -148.166
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: c245e7c17d130294bbc569fbbac5fdcc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: c245e7c17d130294bbc569fbbac5fdcc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: c245e7c17d130294bbc569fbbac5fdcc, type: 3}
+  m_IsPrefabParent: 0
 --- !u!1 &984488186
 GameObject:
   m_ObjectHideFlags: 0
@@ -7295,6 +7380,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3ce171825685f744bc37f797a0440b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zooming: 0
+  zoomSpeed: 0
+  camera: {fileID: 0}
 --- !u!20 &1159223347 stripped
 Camera:
   m_PrefabParentObject: {fileID: 2000000, guid: 5e9e851c0e142814dac026a256ba2ac0,
@@ -12182,9 +12270,10 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1509292806}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2780, y: 1297, z: 676}
+  m_LocalPosition: {x: 4693, y: 1297, z: 676}
   m_LocalScale: {x: 250, y: 250, z: 250}
-  m_Children: []
+  m_Children:
+  - {fileID: 2093765016}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12322,15 +12411,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1e50432d5841e244bdc6499afaf3f72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _serviceUrl: https://gateway.watsonplatform.net/assistant/api
-  _workspaceId: 007c08e4-8367-4619-9e27-3293a9cef3ce
-  _versionDate: 2018-02-16
-  _username: 04a1d88a-3e81-418c-9c5a-aba244cb7b87
-  _password: KgKo10lE3Uw5
+  _serviceUrl: 
+  _workspaceId: 
+  _versionDate: 
+  _username: 
+  _password: 
   _iamApikey: 
   _iamUrl: 
-  ResultsField: {fileID: 567958159}
-  _textToSpeech: {fileID: 190765863}
+  ResultsField: {fileID: 0}
+  _textToSpeech: {fileID: 0}
 --- !u!4 &1726783572
 Transform:
   m_ObjectHideFlags: 0
@@ -12342,7 +12431,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1748423329
 GameObject:
@@ -12721,10 +12810,10 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2093765014}
   m_LocalRotation: {x: -0.25357896, y: 0.65576607, z: -0.24975733, w: -0.66580015}
-  m_LocalPosition: {x: 2780, y: 1297, z: 676}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.0040000007, y: 0.0039999997, z: 0.004}
   m_Children:
   - {fileID: 266552750}
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 1509292812}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -25,6 +25,10 @@ public class TargetObject : MonoBehaviour {
             {
                 camera.fieldOfView = Mathf.Lerp(camera.fieldOfView, 20, Time.deltaTime * 5);
             }
+            else if (hit.transform.name == "Sun")
+            {
+                camera.fieldOfView = Mathf.Lerp(camera.fieldOfView, 20, Time.deltaTime * 5);
+            }
             else
             {
                 camera.fieldOfView = Mathf.Lerp(camera.fieldOfView, 60, Time.deltaTime * 5);
