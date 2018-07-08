@@ -103,7 +103,7 @@ public class SoundVisualisaton : MonoBehaviour {
             if (visualisationScale[visualIndex] > maxVisualisationScale)
                 visualisationScale[visualIndex] = maxVisualisationScale;
 
-            visualisationList[visualIndex].localScale = new Vector3(visualisationList[visualIndex].localScale.x, (20+20*visualisationScale[visualIndex]), visualisationList[visualIndex].localScale.z);
+            visualisationList[visualIndex].localScale = new Vector3(visualisationList[visualIndex].localScale.x, (8+20*visualisationScale[visualIndex]), visualisationList[visualIndex].localScale.z);
                 //Vector3.one + Vector3.up * visualisationScale[visualIndex];
         }
     }
