@@ -4953,6 +4953,130 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1 &128000770
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 128000772}
+  - component: {fileID: 128000771}
+  m_Layer: 0
+  m_Name: Environment
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &128000771
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 128000770}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 339fe69b0cd7e7b4698ec61eb51ed308, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &128000772
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 128000770}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2123.35, y: 3173.18, z: -2424.84}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &128899307
 GameObject:
   m_ObjectHideFlags: 0
@@ -5066,9 +5190,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5801c659dca30ba4992cbabcbf3270ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _serviceUrl: 
-  _username: 
-  _password: 
+  _serviceUrl: https://stream.watsonplatform.net/text-to-speech/api
+  _username: bb8b4857-2a8b-444b-af9a-455a8d3856f5
+  _password: O3604MFYOhQm
   _iamApikey: 
   _iamUrl: 
   source: {fileID: 0}
@@ -5096,14 +5220,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a27bb8e0a0dcd64c9ebc43094194d75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubes: []
-  maxVisualisationScale: 0
-  visualModifier: 0
-  smoothSpeed: 0
-  keePercentage: 0
+  cubes:
+  - {fileID: 984488186}
+  - {fileID: 2015232815}
+  - {fileID: 667131854}
+  - {fileID: 128899307}
+  - {fileID: 68315412}
+  - {fileID: 463122731}
+  - {fileID: 803948129}
+  - {fileID: 1088507780}
+  maxVisualisationScale: 25
+  visualModifier: 150
+  smoothSpeed: 10
+  keePercentage: 0.1
   rmsValue: 0
   dbValue: 0
-  test: 0
+  test: 8
 --- !u!1 &266552749
 GameObject:
   m_ObjectHideFlags: 0
@@ -5814,7 +5946,7 @@ GameObject:
   - component: {fileID: 567958158}
   - component: {fileID: 567958157}
   m_Layer: 5
-  m_Name: TextStreaming
+  m_Name: Response
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6787,7 +6919,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &867105235
 Transform:
   m_ObjectHideFlags: 0
@@ -6812,14 +6944,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca77ce957cd4854688262a7bf407b04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _serviceUrl: 
-  ResultsField: {fileID: 0}
-  _username: 
-  _password: 
+  _serviceUrl: https://stream.watsonplatform.net/speech-to-text/api
+  ResultsField: {fileID: 567958159}
+  _username: 96763730-df56-4818-958d-5e5a3f6a8d8e
+  _password: EFxxDMSqhiX3
   _iamApikey: 
   _iamUrl: 
-  _language: 
-  _conversation: {fileID: 0}
+  _language: en-US_BroadbandModel
+  _conversation: {fileID: 1726783571}
 --- !u!1 &933614736
 GameObject:
   m_ObjectHideFlags: 0
@@ -12411,15 +12543,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1e50432d5841e244bdc6499afaf3f72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _serviceUrl: 
-  _workspaceId: 
-  _versionDate: 
-  _username: 
-  _password: 
+  _serviceUrl: https://gateway.watsonplatform.net/assistant/api
+  _workspaceId: 007c08e4-8367-4619-9e27-3293a9cef3ce
+  _versionDate: 2018-02-20
+  _username: 04a1d88a-3e81-418c-9c5a-aba244cb7b87
+  _password: KgKo10lE3Uw5
   _iamApikey: 
   _iamUrl: 
-  ResultsField: {fileID: 0}
-  _textToSpeech: {fileID: 0}
+  ResultsField: {fileID: 567958159}
+  _textToSpeech: {fileID: 190765863}
 --- !u!4 &1726783572
 Transform:
   m_ObjectHideFlags: 0
