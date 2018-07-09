@@ -21,15 +21,40 @@ public class TargetObject : MonoBehaviour {
         {
             Debug.Log("Le raycast touche un objet !");
             Debug.Log(hit.transform.name);
-            if(hit.transform.name == "Earth")
+            if (hit.transform.name == "Earth")
             {
+                TypeWriting typeWriting = hit.transform.GetComponentInChildren<TypeWriting>();
+                Animator interfaceAnimation = hit.transform.GetComponentInChildren<Animator>();
+                if (!typeWriting.isStarted)
+                {
+                    typeWriting.StartCoroutine("TypeIn");
+                    interfaceAnimation.SetTrigger("FadeIn");
+                }
                 camera.fieldOfView = Mathf.Lerp(camera.fieldOfView, 20, Time.deltaTime * 5);
             }
             else if (hit.transform.name == "Flag")
             {
                 TypeWriting typeWriting = hit.transform.GetComponentInChildren<TypeWriting>();
-                if(!typeWriting.isStarted)
+                Animator interfaceAnimation = hit.transform.GetComponentInChildren<Animator>();
+                if (!typeWriting.isStarted)
+                {
                     typeWriting.StartCoroutine("TypeIn");
+                    interfaceAnimation.SetTrigger("FadeIn");
+                }
+
+
+            }
+            else if (hit.transform.name == "Apollo Lunar Module")
+            {
+                TypeWriting typeWriting = hit.transform.GetComponentInChildren<TypeWriting>();
+                Animator interfaceAnimation = hit.transform.GetComponentInChildren<Animator>();
+                if (!typeWriting.isStarted)
+                {
+                    typeWriting.StartCoroutine("TypeIn");
+                    interfaceAnimation.SetTrigger("FadeIn");
+                }
+
+
             }
             else
             {
