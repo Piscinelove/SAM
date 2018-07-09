@@ -1,4 +1,10 @@
 ﻿/**
+* Rafael Peixoto 2018 - All Rights Reserved
+* Virtual Reality with AI chatbot - VRAI Project
+* 
+* NOTE: Based on example code from IBM which is subject to Apache license as noted below:
+* 
+* ---------------------------------------------------------------------------------------
 * Copyright 2015 IBM Corp. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,7 +18,13 @@
 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 * See the License for the specific language governing permissions and
 * limitations under the License.
-*
+* 
+* ---------------------------------------------------------------------------------------
+* 
+* This is the controller of the chatbot for interact directly SAM AI Assistant Chatbot.
+* The following class send the message recorded of the current user to the chatbot configured by using
+* the IBM's Watson Conversation Service. 
+* When the output is received, it transmits it to the IBM's Watson Text To Speech Service
 */
 
 using UnityEngine;
@@ -31,106 +43,69 @@ public class WatsonConversation : MonoBehaviour
     [Space(10)]
     [Tooltip("The service URL (optional). This defaults to \"https://gateway.watsonplatform.net/conversation/api\"")]
     [SerializeField]
-    private string _serviceUrl;
+    private string serviceURL;
     [Tooltip("The workspaceId to run the example.")]
     [SerializeField]
-    private string _workspaceId;
+    private string workspaceID;
     [Tooltip("The version date with which you would like to use the service in the form YYYY-MM-DD.")]
     [SerializeField]
-    private string _versionDate;
-    [Header("CF Authentication")]
+    private string versionDate;
+    [Header("Cloud Service Authentication")]
     [Tooltip("The authentication username.")]
     [SerializeField]
-    private string _username;
+    private string username;
     [Tooltip("The authentication password.")]
     [SerializeField]
-    private string _password;
-    [Header("IAM Authentication")]
-    [Tooltip("The IAM apikey.")]
+    private string password;
+    [Header("Text to speech script")]
+    [Tooltip("The script of the Text To Speech Service")]
     [SerializeField]
-    private string _iamApikey;
-    [Tooltip("The IAM url used to authenticate the apikey (optional). This defaults to \"https://iam.bluemix.net/identity/token\".")]
-    [SerializeField]
-    private string _iamUrl;
+    private Speak textToSpeech;
     #endregion
 
-    public Text ResultsField;
-    private Conversation _service;
-    public Speak _textToSpeech;
+    private Conversation conversation;
 
-    private string[] _questionArray = { "qui es tu ?", "can you turn on the wipers", "can you turn off the wipers", "can you turn down the ac", "can you unlock the door" };
-    private fsSerializer _serializer = new fsSerializer();
-    private Dictionary<string, object> _context = null;
-    private int _questionCount = -1;
-    private bool _waitingForResponse = true;
+    private fsSerializer serializer = new fsSerializer();
+    private Dictionary<string, object> contexts = null;
+    private bool waitingForResponse = false;
 
     void Start()
     {
         LogSystem.InstallDefaultReactors();
-        Runnable.Run(CreateService());
+        CreateService();
     }
 
-    private IEnumerator CreateService()
+    private void CreateService()
     {
         //  Create credential and instantiate service
         Credentials credentials = null;
-        if (!string.IsNullOrEmpty(_username) && !string.IsNullOrEmpty(_password))
+        if (!string.IsNullOrEmpty(username) && !string.IsNullOrEmpty(password))
         {
             //  Authenticate using username and password
-            credentials = new Credentials(_username, _password, _serviceUrl);
-        }
-        else if (!string.IsNullOrEmpty(_iamApikey))
-        {
-            //  Authenticate using iamApikey
-            TokenOptions tokenOptions = new TokenOptions()
-            {
-                IamApiKey = _iamApikey,
-                IamUrl = _iamUrl
-            };
-
-            credentials = new Credentials(tokenOptions, _serviceUrl);
-
-            //  Wait for tokendata
-            while (!credentials.HasIamTokenData())
-                yield return null;
+            credentials = new Credentials(username, password, serviceURL);
         }
         else
         {
-            throw new WatsonException("Please provide either username and password or IAM apikey to authenticate the service.");
+            throw new WatsonException("Please provide either username and password to authenticate the service.");
         }
 
-        _service = new Conversation(credentials);
-        _service.VersionDate = _versionDate;
-
-        //Runnable.Run(SendMessage());
-    }
-
-    public IEnumerator TransferMessage(string message)
-    {
-        //if (!_service.Message(OnMessage, OnFail, _workspaceId, "hello"))
-            //Log.Debug("ExampleConversation.Message()", "Failed to message!");
-
-        while (_waitingForResponse)
-            yield return null;
-
-        _waitingForResponse = true;
-        AskQuestion(message);
-
-        Log.Debug("ExampleConversation.Examples()", "Conversation examples complete.");
+        conversation = new Conversation(credentials);
+        conversation.VersionDate = versionDate;
     }
 
     public void AskQuestion(string message)
     {
+        waitingForResponse = true;
         MessageRequest messageRequest = new MessageRequest()
         {
             input = new Dictionary<string, object>()
             {
                 { "text", message }
             },
-            context = _context
+            context = contexts
         };
 
-        if (!_service.Message(OnMessage, OnFail, _workspaceId, messageRequest))
+        if (!conversation.Message(OnMessage, OnFail, workspaceID, messageRequest))
             Log.Debug("ExampleConversation.AskQuestion()", "Failed to message!");
     }
 
@@ -140,35 +115,37 @@ public class WatsonConversation : MonoBehaviour
 
         //  Convert resp to fsdata
         fsData fsdata = null;
-        fsResult r = _serializer.TrySerialize(resp.GetType(), resp, out fsdata);
+        fsResult r = serializer.TrySerialize(resp.GetType(), resp, out fsdata);
         if (!r.Succeeded)
             throw new WatsonException(r.FormattedMessages);
 
         //  Convert fsdata to MessageResponse
         MessageResponse messageResponse = new MessageResponse();
         object obj = messageResponse;
-        r = _serializer.TryDeserialize(fsdata, obj.GetType(), ref obj);
+        r = serializer.TryDeserialize(fsdata, obj.GetType(), ref obj);
         if (!r.Succeeded)
             throw new WatsonException(r.FormattedMessages);
-
-
-        ResultsField.text = messageResponse.output.text[0];
-        _textToSpeech.Synthesize(messageResponse.output.text[0]);
-
 
         //  Set context for next round of messaging
         object _tempContext = null;
         (resp as Dictionary<string, object>).TryGetValue("context", out _tempContext);
 
         if (_tempContext != null)
-            _context = _tempContext as Dictionary<string, object>;
+            contexts = _tempContext as Dictionary<string, object>;
         else
             Log.Debug("ExampleConversation.OnMessage()", "Failed to get context");
-        _waitingForResponse = false;
+
+        waitingForResponse = false;
+        textToSpeech.Synthesize(messageResponse.output.text[0]);
     }
 
     private void OnFail(RESTConnector.Error error, Dictionary<string, object> customData)
     {
         Log.Error("ExampleConversation.OnFail()", "Error received: {0}", error.ToString());
+    }
+
+    public bool isWaitingForResponse()
+    {
+        return waitingForResponse;
     }
 }

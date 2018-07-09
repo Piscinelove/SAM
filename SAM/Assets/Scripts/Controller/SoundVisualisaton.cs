@@ -4,11 +4,29 @@ using UnityEngine;
 
 public class SoundVisualisaton : MonoBehaviour {
 
-    public GameObject[] cubes;
-    public float maxVisualisationScale = 25.0f;
-    public float visualModifier = 50.0f;
-    public float smoothSpeed = 10.0f;
-    public float keePercentage = 0.5f;
+    #region PLEASE SET THESE VARIABLES IN THE INSPECTOR
+    [Space(10)]
+    [Header("Parameters for sound visualisation")]
+    [Tooltip("Cubes game object for visualisation")]
+    [SerializeField]
+    private GameObject[] cubes;
+    [Tooltip("The maximum scale")]
+    [SerializeField]
+    private float maxVisualisationScale = 25.0f;
+    [Tooltip("The visual modifier")]
+    [SerializeField]
+    private float visualModifier = 50.0f;
+    [Tooltip("The smooth speed")]
+    [SerializeField]
+    private float smoothSpeed = 10.0f;
+    [Tooltip("The keep percentage")]
+    [SerializeField]
+    private float keePercentage = 0.5f;
+    [Header("Text to speech script")]
+    [Tooltip("The script of the text to speech")]
+    [SerializeField]
+    private Speak speak;
+    #endregion
 
     private const int SAMPLE_SIZE = 1024;
 
@@ -27,13 +45,9 @@ public class SoundVisualisaton : MonoBehaviour {
 
     private Transform[] visualisationList;
     private float[] visualisationScale;
-    public int test = 8;
+    private int amountOfVisualisations;
 
-    public SoundVisualisaton(AudioSource source)
-    {
-        this.source = source;
-    }
-
+    private Speak textToSpeech;
 
     // Use this for initialization
     private void Start ()
@@ -41,6 +55,7 @@ public class SoundVisualisaton : MonoBehaviour {
 
         samples = new float[SAMPLE_SIZE];
         spectrum = new float[SAMPLE_SIZE];
+        amountOfVisualisations = cubes.Length;
 
 
         SpawnLine();
@@ -49,11 +64,11 @@ public class SoundVisualisaton : MonoBehaviour {
 
     private void SpawnLine()
     {
-        visualisationScale = new float[test];
-        visualisationList = new Transform[test];
+        visualisationScale = new float[amountOfVisualisations];
+        visualisationList = new Transform[amountOfVisualisations];
 
         //GameObject[] cubes = GameObject.FindGameObjectsWithTag("SoundVisualcube");
-        for (int i = 0; i < test; i++)
+        for (int i = 0; i < amountOfVisualisations; i++)
         {
             //GameObject go = GameObject.CreatePrimitive(PrimitiveType.Cube) as GameObject;
             //GameObject go = cubes[i];
@@ -66,9 +81,9 @@ public class SoundVisualisaton : MonoBehaviour {
     // Update is called once per frame
     private void Update()
     {
-        if (GetComponent<Speak>().source != null)
+        if (speak.synthesizedVoice != null)
         {
-            source = GetComponent<Speak>().source;
+            source = speak.synthesizedVoice;
             // Read from the audio file
             sampleRate = AudioSettings.outputSampleRate;
             AnalyseSound();
@@ -81,12 +96,12 @@ public class SoundVisualisaton : MonoBehaviour {
     private void UpdateVisual()
     {
         int spectrumIndex = 0;
-        int averageSize = (int) ((SAMPLE_SIZE* keePercentage) / test);
+        int averageSize = (int) ((SAMPLE_SIZE* keePercentage) / amountOfVisualisations);
 
-        Debug.Log(" Amount of Visual : " + test);
-        for (int visualIndex = 0; visualIndex < test; visualIndex++)
+        Debug.Log(" Amount of Visual : " + amountOfVisualisations);
+        for (int visualIndex = 0; visualIndex < amountOfVisualisations; visualIndex++)
         {
-            Debug.Log("VisualIndex : " + visualIndex + " Amount of Visual : " + test);
+            Debug.Log("VisualIndex : " + visualIndex + " Amount of Visual : " + amountOfVisualisations);
             float sum = 0;
             for (int j = 0; j < averageSize; j++)
             {
