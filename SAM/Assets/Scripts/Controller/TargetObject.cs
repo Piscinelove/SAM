@@ -25,14 +25,18 @@ public class TargetObject : MonoBehaviour {
             {
                 camera.fieldOfView = Mathf.Lerp(camera.fieldOfView, 20, Time.deltaTime * 5);
             }
-            else if (hit.transform.name == "Sun")
+            else if (hit.transform.name == "Flag")
             {
-                camera.fieldOfView = Mathf.Lerp(camera.fieldOfView, 20, Time.deltaTime * 5);
+                TypeWriting typeWriting = hit.transform.GetComponentInChildren<TypeWriting>();
+                if(!typeWriting.isStarted)
+                    typeWriting.StartCoroutine("TypeIn");
             }
             else
             {
                 camera.fieldOfView = Mathf.Lerp(camera.fieldOfView, 60, Time.deltaTime * 5);
             }
+
+
         }
 
 	}
