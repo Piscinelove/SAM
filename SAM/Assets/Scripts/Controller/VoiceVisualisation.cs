@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoundVisualisaton : MonoBehaviour {
+public class VoiceVisualisation : MonoBehaviour
+{
 
     #region PLEASE SET THESE VARIABLES IN THE INSPECTOR
     [Space(10)]
@@ -50,7 +51,7 @@ public class SoundVisualisaton : MonoBehaviour {
     private Speak textToSpeech;
 
     // Use this for initialization
-    private void Start ()
+    private void Start()
     {
 
         samples = new float[SAMPLE_SIZE];
@@ -96,7 +97,7 @@ public class SoundVisualisaton : MonoBehaviour {
     private void UpdateVisual()
     {
         int spectrumIndex = 0;
-        int averageSize = (int) ((SAMPLE_SIZE* keePercentage) / amountOfVisualisations);
+        int averageSize = (int)((SAMPLE_SIZE * keePercentage) / amountOfVisualisations);
 
         Debug.Log(" Amount of Visual : " + amountOfVisualisations);
         for (int visualIndex = 0; visualIndex < amountOfVisualisations; visualIndex++)
@@ -118,8 +119,7 @@ public class SoundVisualisaton : MonoBehaviour {
             if (visualisationScale[visualIndex] > maxVisualisationScale)
                 visualisationScale[visualIndex] = maxVisualisationScale;
 
-            visualisationList[visualIndex].localScale = new Vector3(visualisationList[visualIndex].localScale.x, (8+20*visualisationScale[visualIndex]), visualisationList[visualIndex].localScale.z);
-                //Vector3.one + Vector3.up * visualisationScale[visualIndex];
+            visualisationList[visualIndex].localScale = new Vector3(visualisationList[visualIndex].localScale.x, (1 + visualisationScale[visualIndex]), visualisationList[visualIndex].localScale.z);
         }
     }
 
@@ -132,7 +132,7 @@ public class SoundVisualisaton : MonoBehaviour {
 
         float sum = 0;
         // Retrieve the rms value
-        for (int i = 0; i < SAMPLE_SIZE;  i++)
+        for (int i = 0; i < SAMPLE_SIZE; i++)
         {
             sum += samples[i] * samples[i];
         }

@@ -144,6 +144,7 @@ public class SceneSpeechStreaming : MonoBehaviour
     {
         if (recordingRoutine == 0)
         {
+            Debug.Log("work");
             UnityObjectUtil.StartDestroyQueue();
             recordingRoutine = Runnable.Run(RecordingHandler());
         }

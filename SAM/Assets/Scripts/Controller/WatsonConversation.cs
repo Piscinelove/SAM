@@ -95,7 +95,6 @@ public class WatsonConversation : MonoBehaviour
 
     public void AskQuestion(string message)
     {
-        waitingForResponse = true;
         MessageRequest messageRequest = new MessageRequest()
         {
             input = new Dictionary<string, object>()
@@ -107,6 +106,8 @@ public class WatsonConversation : MonoBehaviour
 
         if (!conversation.Message(OnMessage, OnFail, workspaceID, messageRequest))
             Log.Debug("ExampleConversation.AskQuestion()", "Failed to message!");
+
+        waitingForResponse = true;
     }
 
     private void OnMessage(object resp, Dictionary<string, object> customData)

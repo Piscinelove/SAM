@@ -19,8 +19,6 @@ public class TargetObject : MonoBehaviour {
 
         if (Physics.Raycast(transform.position, transform.forward, out hit, 3000))
         {
-            Debug.Log("Le raycast touche un objet !");
-            Debug.Log(hit.transform.name);
             if (hit.transform.name == "Earth")
             {
                 TypeWriting typeWriting = hit.transform.GetComponentInChildren<TypeWriting>();
