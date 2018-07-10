@@ -51,7 +51,6 @@ public class Speak : MonoBehaviour
     #endregion
 
     private TextToSpeech service;
-   
 
     private string createdCustomisationID;
     private CustomVoiceUpdate customVoiceUpdate;
@@ -113,14 +112,17 @@ public class Speak : MonoBehaviour
 
     void HandleToSpeechCallback(AudioClip clip, Dictionary<string, object> customData = null)
     {
-        PlayClip(clip);
+        StartCoroutine(PlayClip(clip));
     }
 
-    private void PlayClip(AudioClip clip)
+    private IEnumerator PlayClip(AudioClip clip)
     {
         if (Application.isPlaying && clip != null)
         {
-            GameObject audioObject = new GameObject("AudioObject");
+            while (GameObject.Find("/VoiceSpeaking") != null)
+                yield return null;
+
+            GameObject audioObject = new GameObject("VoiceSpeaking");
             //AudioSource source = audioObject.AddComponent<AudioSource>();
             source = audioObject.AddComponent<AudioSource>();
             source.spatialBlend = 0.0f;
@@ -133,6 +135,7 @@ public class Speak : MonoBehaviour
             synthesizeTested = true;
         }
     }
+
 
     private void OnGetVoices(Voices voices, Dictionary<string, object> customData = null)
     {

@@ -95,6 +95,7 @@ public class WatsonConversation : MonoBehaviour
 
     public void AskQuestion(string message)
     {
+        waitingForResponse = true;
         MessageRequest messageRequest = new MessageRequest()
         {
             input = new Dictionary<string, object>()
@@ -107,7 +108,7 @@ public class WatsonConversation : MonoBehaviour
         if (!conversation.Message(OnMessage, OnFail, workspaceID, messageRequest))
             Log.Debug("ExampleConversation.AskQuestion()", "Failed to message!");
 
-        waitingForResponse = true;
+
     }
 
     private void OnMessage(object resp, Dictionary<string, object> customData)
@@ -136,8 +137,9 @@ public class WatsonConversation : MonoBehaviour
         else
             Log.Debug("ExampleConversation.OnMessage()", "Failed to get context");
 
-        waitingForResponse = false;
+        //textToSpeech.Synthesize(messageResponse.output.text[0]);
         textToSpeech.Synthesize(messageResponse.output.text[0]);
+        waitingForResponse = false;
     }
 
     private void OnFail(RESTConnector.Error error, Dictionary<string, object> customData)
