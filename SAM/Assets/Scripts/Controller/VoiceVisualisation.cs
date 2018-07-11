@@ -99,10 +99,9 @@ public class VoiceVisualisation : MonoBehaviour
         int spectrumIndex = 0;
         int averageSize = (int)((SAMPLE_SIZE * keePercentage) / amountOfVisualisations);
 
-        Debug.Log(" Amount of Visual : " + amountOfVisualisations);
         for (int visualIndex = 0; visualIndex < amountOfVisualisations; visualIndex++)
         {
-            Debug.Log("VisualIndex : " + visualIndex + " Amount of Visual : " + amountOfVisualisations);
+
             float sum = 0;
             for (int j = 0; j < averageSize; j++)
             {

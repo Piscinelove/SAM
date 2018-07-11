@@ -72,6 +72,7 @@ public class WatsonConversation : MonoBehaviour
     void Start()
     {
         LogSystem.InstallDefaultReactors();
+        contexts = new Dictionary<string, object>();
         CreateService();
     }
 
@@ -96,6 +97,9 @@ public class WatsonConversation : MonoBehaviour
     public void AskQuestion(string message)
     {
         waitingForResponse = true;
+        
+        //contexts["target"] = TargetObject.target;
+        contexts["target"] = GameObject.Find("Main Camera").GetComponent<TargetObject>().target;
         MessageRequest messageRequest = new MessageRequest()
         {
             input = new Dictionary<string, object>()

@@ -7,6 +7,7 @@ public class TargetObject : MonoBehaviour {
     public bool zooming;
     public float zoomSpeed;
     public Camera camera;
+    public string target;
 
 
     // Update is called once per frame
@@ -19,6 +20,7 @@ public class TargetObject : MonoBehaviour {
 
         if (Physics.Raycast(transform.position, transform.forward, out hit, 3000))
         {
+            target = hit.transform.name;
             if (hit.transform.name == "Earth")
             {
                 TypeWriting typeWriting = hit.transform.GetComponentInChildren<TypeWriting>();

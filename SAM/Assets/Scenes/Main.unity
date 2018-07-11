@@ -5149,8 +5149,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serviceURL: https://stream.watsonplatform.net/text-to-speech/api
-  username: 7203d6a7-301a-4d5d-b48b-2567853c7ada
-  password: WynT6YeG57Xd
+  username: cde0f60d-eeb5-4d84-a5e3-836038b423b9
+  password: CvR7feY07O4A
 --- !u!4 &190765864
 Transform:
   m_ObjectHideFlags: 0
@@ -6969,8 +6969,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serviceURL: https://stream.watsonplatform.net/speech-to-text/api
-  username: 96763730-df56-4818-958d-5e5a3f6a8d8e
-  password: EFxxDMSqhiX3
+  username: 36351483-7315-40b8-91b5-41a9956a5b32
+  password: Iga0qFIJg4qj
   language: en-US_BroadbandModel
   conversation: {fileID: 1726783571}
 --- !u!1 &874592035
@@ -7305,7 +7305,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 75e3d5d9575c11b4fb4c8db7a328c9c2, type: 2}
     - target: {fileID: 100002, guid: c245e7c17d130294bbc569fbbac5fdcc, type: 3}
       propertyPath: m_Name
-      value: Apollo Lunar Module
+      value: Module
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: c245e7c17d130294bbc569fbbac5fdcc, type: 3}
       propertyPath: m_LocalScale.x
@@ -7761,6 +7761,7 @@ MonoBehaviour:
   zooming: 0
   zoomSpeed: 0
   camera: {fileID: 0}
+  target: 
 --- !u!20 &1159223347 stripped
 Camera:
   m_PrefabParentObject: {fileID: 2000000, guid: 5e9e851c0e142814dac026a256ba2ac0,
@@ -13356,10 +13357,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serviceURL: https://gateway.watsonplatform.net/assistant/api
-  workspaceID: 007c08e4-8367-4619-9e27-3293a9cef3ce
+  workspaceID: 26455119-2e52-47c5-905e-1efd2c0664a6
   versionDate: 2018-02-20
-  username: 04a1d88a-3e81-418c-9c5a-aba244cb7b87
-  password: KgKo10lE3Uw5
+  username: f5cebd57-3526-49bd-983d-259a68af46b4
+  password: fdh1qXW6KqGn
   textToSpeech: {fileID: 190765863}
 --- !u!4 &1726783572
 Transform:
