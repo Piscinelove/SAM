@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 2edf5c9e45adf214591dbc098bd69828
 ModelImporter:
-  serializedVersion: 22
+  serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     100002: polySurface1_MeshPart0
@@ -36,7 +36,38 @@ ModelImporter:
     4300008: polySurface1_MeshPart4
     4300010: polySurface1_MeshPart5
     9500000: //RootNode
-  externalObjects: {}
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: initialShadingGroup2
+    second: {fileID: 2100000, guid: 0cca0ee002dd09b4e917873d7ab14f81, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert4SG1
+    second: {fileID: 2100000, guid: bd3a317f51eaab844b785090e376fd83, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert5SG1
+    second: {fileID: 2100000, guid: 6600788f6d789be4b88e99539c0ddda3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert6SG1
+    second: {fileID: 2100000, guid: 86a0cb8c23393394e964c1e04db7d574, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert7SG1
+    second: {fileID: 2100000, guid: c6e9978efcb7ab44fa66f91637c57040, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: phong1SG1
+    second: {fileID: 2100000, guid: 7a64115ccc8c9a84b937e717ca50651d, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -87,6 +118,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 0
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0

@@ -87,32 +87,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>For information about the meaning of the models that the service uses to describe personality characteristics, see <a href="https://console.bluemix.net/docs/services/personality-insights/models.html">Personality models</a>. For information about the meaning of the consumption preferences, see <a href="https://console.bluemix.net/docs/services/personality-insights/preferences.html">Consumption preferences</a>.</p>
 <h2 id="usage">Usage</h2>
 <p>The service offers a single <code>profile</code> method that accepts up to 20 MB of input data and produces results in JSON or CSV format. The service accepts input in Arabic, English, Japanese, or Spanish and can produce output in a variety of languages.</p>
-<h3 id="instantiating-and-authenticating-the-service">Instantiating and authenticating the service</h3>
-<p>Before you can send requests to the service it must be instantiated and credentials must be set.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode cs"><code class="sourceCode cs"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">using</span> IBM.<span class="fu">Watson</span>.<span class="fu">DeveloperCloud</span>.<span class="fu">Services</span>.<span class="fu">PersonalityInsights</span>.<span class="fu">v3</span>;</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw">using</span> IBM.<span class="fu">Watson</span>.<span class="fu">DeveloperCloud</span>.<span class="fu">Utilities</span>;</a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="dt">void</span> <span class="fu">Start</span>()</a>
-<a class="sourceLine" id="cb1-5" data-line-number="5">{</a>
-<a class="sourceLine" id="cb1-6" data-line-number="6">    Credentials credentials = <span class="kw">new</span> <span class="fu">Credentials</span>(&lt;username&gt;, &lt;password&gt;, &lt;url&gt;);</a>
-<a class="sourceLine" id="cb1-7" data-line-number="7">    PersonalityInsights _personalityInsights = <span class="kw">new</span> <span class="fu">PersonalityInsights</span>(credentials);</a>
-<a class="sourceLine" id="cb1-8" data-line-number="8">}</a></code></pre></div>
 <h3 id="profile">Profile</h3>
 <p>Extract personality characteristics based on how a person writes.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode cs"><code class="sourceCode cs"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">private</span> <span class="dt">void</span> <span class="fu">GetProfile</span>()</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2">{</a>
-<a class="sourceLine" id="cb2-3" data-line-number="3">  <span class="kw">if</span>(!m_personalityInsights.<span class="fu">GetProfile</span>(OnGetProfileJson, OnFail, dataPath, ContentType.<span class="fu">TEXT_HTML</span>, ContentLanguage.<span class="fu">ENGLISH</span>, ContentType.<span class="fu">APPLICATION_JSON</span>, AcceptLanguage.<span class="fu">ENGLISH</span>, <span class="kw">true</span>, <span class="kw">true</span>, <span class="kw">true</span>))</a>
-<a class="sourceLine" id="cb2-4" data-line-number="4">    Log.<span class="fu">Debug</span>(<span class="st">&quot;ExamplePersonalityInsights.GetProfile()&quot;</span>, <span class="st">&quot;Failed to get profile!&quot;</span>);</a>
-<a class="sourceLine" id="cb2-5" data-line-number="5">}</a>
-<a class="sourceLine" id="cb2-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="kw">private</span> <span class="dt">void</span> <span class="fu">OnGetProfile</span>(Profile profile, Dictionary&lt;<span class="dt">string</span>, <span class="dt">object</span>&gt; customData)</a>
-<a class="sourceLine" id="cb2-8" data-line-number="8">{</a>
-<a class="sourceLine" id="cb2-9" data-line-number="9">  Log.<span class="fu">Debug</span>(<span class="st">&quot;ExamplePersonalityInsights.OnGetProfile()&quot;</span>, <span class="st">&quot;Profile result: {0}&quot;</span>, customData[<span class="st">&quot;json&quot;</span>].<span class="fu">ToString</span>());</a>
-<a class="sourceLine" id="cb2-10" data-line-number="10">}</a>
-<a class="sourceLine" id="cb2-11" data-line-number="11"></a>
-<a class="sourceLine" id="cb2-12" data-line-number="12"><span class="kw">private</span> <span class="dt">void</span> <span class="fu">OnFail</span>(RESTConnector.<span class="fu">Error</span> error, Dictionary&lt;<span class="dt">string</span>, <span class="dt">object</span>&gt; customData)</a>
-<a class="sourceLine" id="cb2-13" data-line-number="13">{</a>
-<a class="sourceLine" id="cb2-14" data-line-number="14">    Log.<span class="fu">Error</span>(<span class="st">&quot;ExamplePersonalityInsights.OnFail()&quot;</span>, <span class="st">&quot;Error received: {0}&quot;</span>, error.<span class="fu">ToString</span>());</a>
-<a class="sourceLine" id="cb2-15" data-line-number="15">}</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode cs"><code class="sourceCode cs"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">private</span> <span class="dt">void</span> <span class="fu">GetProfile</span>()</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">{</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">  <span class="kw">if</span>(!m_personalityInsights.<span class="fu">GetProfile</span>(OnGetProfileJson, OnFail, dataPath, ContentType.<span class="fu">TEXT_HTML</span>, ContentLanguage.<span class="fu">ENGLISH</span>, ContentType.<span class="fu">APPLICATION_JSON</span>, AcceptLanguage.<span class="fu">ENGLISH</span>, <span class="kw">true</span>, <span class="kw">true</span>, <span class="kw">true</span>))</a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">    Log.<span class="fu">Debug</span>(<span class="st">&quot;ExamplePersonalityInsights.GetProfile()&quot;</span>, <span class="st">&quot;Failed to get profile!&quot;</span>);</a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">}</a>
+<a class="sourceLine" id="cb1-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="kw">private</span> <span class="dt">void</span> <span class="fu">OnGetProfile</span>(Profile profile, Dictionary&lt;<span class="dt">string</span>, <span class="dt">object</span>&gt; customData)</a>
+<a class="sourceLine" id="cb1-8" data-line-number="8">{</a>
+<a class="sourceLine" id="cb1-9" data-line-number="9">  Log.<span class="fu">Debug</span>(<span class="st">&quot;ExamplePersonalityInsights.OnGetProfile()&quot;</span>, <span class="st">&quot;Profile result: {0}&quot;</span>, customData[<span class="st">&quot;json&quot;</span>].<span class="fu">ToString</span>());</a>
+<a class="sourceLine" id="cb1-10" data-line-number="10">}</a>
+<a class="sourceLine" id="cb1-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb1-12" data-line-number="12"><span class="kw">private</span> <span class="dt">void</span> <span class="fu">OnFail</span>(RESTConnector.<span class="fu">Error</span> error, Dictionary&lt;<span class="dt">string</span>, <span class="dt">object</span>&gt; customData)</a>
+<a class="sourceLine" id="cb1-13" data-line-number="13">{</a>
+<a class="sourceLine" id="cb1-14" data-line-number="14">    Log.<span class="fu">Error</span>(<span class="st">&quot;ExamplePersonalityInsights.OnFail()&quot;</span>, <span class="st">&quot;Error received: {0}&quot;</span>, error.<span class="fu">ToString</span>());</a>
+<a class="sourceLine" id="cb1-15" data-line-number="15">}</a></code></pre></div>
 </body>
 </html>

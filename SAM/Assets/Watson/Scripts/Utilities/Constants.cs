@@ -47,7 +47,7 @@ namespace IBM.Watson.DeveloperCloud.Utilities
         public static class String
         {
             /// <exclude />
-            public const string Version = "watson-apis-unity-sdk/2.4.0";
+            public const string Version = "watson-apis-unity-sdk/2.4.2";
             /// <exclude />
             public const string DebugDispalyQuality = "Quality: {0}";
             /// <summary>
@@ -69,7 +69,7 @@ namespace IBM.Watson.DeveloperCloud.Utilities
             /// <summary>
             /// Tracking for onboarding
             /// </summary>
-            public const string TRACKING_QUERY_PARAM = "cm_mmc=Display_UnitySDK-_-Developer_Innovation-_-WW_WW-_-unity_sdk_watson_dw";
+            public const string TRACKING_QUERY_PARAM = "target=/developer/watson&cm_mmc=Display_UnitySDK-_-Developer_Innovation-_-WW_WW-_-unity_sdk_watson_dw";
         }
 
         /// <summary>
