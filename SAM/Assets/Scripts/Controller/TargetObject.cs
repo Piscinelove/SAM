@@ -44,7 +44,7 @@ public class TargetObject : MonoBehaviour {
 
 
             }
-            else if (hit.transform.name == "Apollo Lunar Module")
+            else if (hit.transform.name == "Module")
             {
                 TypeWriting typeWriting = hit.transform.GetComponentInChildren<TypeWriting>();
                 Animator interfaceAnimation = hit.transform.GetComponentInChildren<Animator>();
