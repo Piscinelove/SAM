@@ -61,6 +61,10 @@ public class WatsonConversation : MonoBehaviour
     [Tooltip("The script of the Text To Speech Service")]
     [SerializeField]
     private Speak textToSpeech;
+    [Header("Environment controller script")]
+    [Tooltip("The script of environment controls")]
+    [SerializeField]
+    private EnvironmentController environment;
     #endregion
 
     private Conversation conversation;
@@ -143,6 +147,7 @@ public class WatsonConversation : MonoBehaviour
 
         //textToSpeech.Synthesize(messageResponse.output.text[0]);
         textToSpeech.Synthesize(messageResponse.output.text[0]);
+        environment.Manage(messageResponse, contexts);
         waitingForResponse = false;
     }
 
