@@ -13,23 +13,57 @@ public class EnvironmentController : MonoBehaviour {
     [Tooltip("Second song")]
     [SerializeField]
     private AudioClip secondSong;
+    [Tooltip("Earth")]
+    [SerializeField]
+    private GameObject earth;
+    [Tooltip("Flag")]
+    [SerializeField]
+    private GameObject flag;
+    [Tooltip("Module")]
+    [SerializeField]
+    private GameObject module;
     #endregion
 
     private AudioSource environmentAudioSource;
     private AudioClip initialClip;
-	// Use this for initialization
-	void Start ()
+
+    private bool isEarthDiscovered = false;
+    private TypeWriting earthTypeWriting;
+    private Animator earthAnimator;
+
+    private bool isFlagDiscovered = false;
+    private TypeWriting flagTypeWriting;
+    private Animator flagAnimator;
+
+    private bool isModuleDiscovered = false;
+    private TypeWriting moduleTypeWriting;
+    private Animator moduleAnimator;
+
+
+    // Use this for initialization
+    void Start ()
     {
+
         environmentAudioSource = GameObject.Find("/Environment").GetComponent<AudioSource>();
         initialClip = environmentAudioSource.clip;
 
+        earthTypeWriting = earth.GetComponentInChildren<TypeWriting>();
+        earthAnimator = earth.GetComponentInChildren<Animator>();
+
+
+        flagTypeWriting = flag.GetComponentInChildren<TypeWriting>();
+        flagAnimator = flag.GetComponentInChildren<Animator>();
+
+        moduleTypeWriting = module.GetComponentInChildren<TypeWriting>();
+        moduleAnimator = module.GetComponentInChildren<Animator>();
+
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update ()
     {
-		
-	}
+
+    }
 
     public void Manage(MessageResponse response, Dictionary<string, object> contexts)
     {
@@ -37,20 +71,40 @@ public class EnvironmentController : MonoBehaviour {
 
         if (intent.Equals("MUSIC_PLAY_COMMANDS") || intent.Equals("MUSIC_NEXT_COMMANDS") || intent.Equals("MUSIC_STOP_COMMANDS"))
             MusicPlayer(contexts["music"].ToString());
-
-        /*
-        switch (intent)
+        else if(intent.Equals("ENVIRONMENT_GET_INFORMATION"))
         {
-            case "MUSIC_PLAY_COMMANDS":
-                MusicPlayer(contexts["music"].ToString());
-                break;
-            case "MUSIC_NEXT_COMMANDS":
-                MusicPlayer(contexts["music"].ToString());
-                break;
+            switch (contexts["target"].ToString())
+            {
+                case "Earth":
 
-        }
-        */
-        
+                    if(!isEarthDiscovered && !earthTypeWriting.isStarted)
+                    {
+                        earthTypeWriting.StartCoroutine("TypeIn");
+                        earthAnimator.SetTrigger("FadeIn");
+                        isEarthDiscovered = true;
+                        break;
+                    }
+                    break;
+                case "Flag":
+                    if (!isFlagDiscovered && !flagTypeWriting.isStarted)
+                    {
+                        flagTypeWriting.StartCoroutine("TypeIn");
+                        flagAnimator.SetTrigger("FadeIn");
+                        isFlagDiscovered = true;
+                        break;
+                    }
+                    break;
+                case "Module":
+                    if (!isModuleDiscovered && !moduleTypeWriting.isStarted)
+                    {
+                        moduleTypeWriting.StartCoroutine("TypeIn");
+                        moduleAnimator.SetTrigger("FadeIn");
+                        isModuleDiscovered = true;
+                        break;
+                    }
+                    break;
+            }
+        }   
     }
 
     private void MusicPlayer(string context)
@@ -72,5 +126,10 @@ public class EnvironmentController : MonoBehaviour {
                 break;
         }
        
+    }
+
+    private void DisplayObjectTitle()
+    {
+
     }
 }

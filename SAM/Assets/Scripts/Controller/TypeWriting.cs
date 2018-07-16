@@ -8,15 +8,18 @@ using UnityEngine.UI;
 public class TypeWriting : MonoBehaviour {
 
     public string message = "Replace";
-    private Text textComponent;
     public float startDelay = 2f;
     public float typeDelay = 0.01f;
     public AudioClip typeSound;
     public bool isStarted = false;
 
+    private Text textComponent;
+
+
 	// Use this for initialization
-	void Start () {
-        //StartCoroutine("TypeIn");
+	void Start ()
+    {
+
 	}
 	
 	// Update is called once per frame
@@ -24,7 +27,8 @@ public class TypeWriting : MonoBehaviour {
 		
 	}
 
-    private void Awake()
+
+    void Awake()
     {
         textComponent = GetComponent<Text>();
     }

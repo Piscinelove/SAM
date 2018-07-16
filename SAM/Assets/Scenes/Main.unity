@@ -4877,7 +4877,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 339fe69b0cd7e7b4698ec61eb51ed308, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -5155,8 +5155,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serviceURL: https://stream.watsonplatform.net/text-to-speech/api
-  username: 37a653f2-bc7b-4ecd-9bb9-9d6ca5d7f9c6
-  password: ziTkiQY6I5cT
+  username: 3adf3135-489f-4d50-9a75-9a1bce8cb933
+  password: bUxFxptiTA3l
 --- !u!4 &190765864
 Transform:
   m_ObjectHideFlags: 0
@@ -5428,7 +5428,7 @@ GameObject:
   - component: {fileID: 425828012}
   - component: {fileID: 425828011}
   m_Layer: 0
-  m_Name: Moon
+  m_Name: MoonTerrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6326,8 +6326,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.587402, y: 4.671295, z: 0.7415161}
-  m_Center: {x: -0.6698627, y: 0.335423, z: -0.02734375}
+  m_Size: {x: 4.7233825, y: 8.089541, z: 0.7415161}
+  m_Center: {x: -0.601872, y: 2.0445483, z: -0.02734375}
 --- !u!1 &803948129
 GameObject:
   m_ObjectHideFlags: 0
@@ -7663,9 +7663,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3ce171825685f744bc37f797a0440b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zooming: 0
-  zoomSpeed: 0
-  camera: {fileID: 0}
   target: 
 --- !u!20 &1159223347 stripped
 Camera:
@@ -7761,7 +7758,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   message: 'PLANET EARTH '
-  startDelay: 0
+  startDelay: 0.5
   typeDelay: 0.05
   typeSound: {fileID: 8300000, guid: 71f9b9bf21cb3b64a873583988916305, type: 3}
   isStarted: 0
@@ -7949,7 +7946,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   message: 'USA FLAG (1969) '
-  startDelay: 0
+  startDelay: 0.5
   typeDelay: 0.05
   typeSound: {fileID: 8300000, guid: 71f9b9bf21cb3b64a873583988916305, type: 3}
   isStarted: 0
@@ -8140,7 +8137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   message: 'EAGLE LUNAR MODULE (1969) '
-  startDelay: 0
+  startDelay: 0.5
   typeDelay: 0.05
   typeSound: {fileID: 8300000, guid: 71f9b9bf21cb3b64a873583988916305, type: 3}
   isStarted: 0
@@ -13295,7 +13292,32 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+      propertyPath: m_FootstepSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1e7165b760f08434da804a40ab876787, type: 3}
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+      propertyPath: m_FootstepSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2c9920a1ac955dd4fbf386efad15f211, type: 3}
+    - target: {fileID: 8200000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+      propertyPath: m_Volume
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+      propertyPath: m_WalkSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+      propertyPath: m_JumpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 944caaa768c680442ae08cd8a8734b22, type: 3}
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+      propertyPath: m_LandSound
+      value: 
+      objectReference: {fileID: 8300000, guid: f57a7fd1e4db7094bacc89140130b63f, type: 3}
+    m_RemovedComponents:
+    - {fileID: 8100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1601199343
@@ -13465,6 +13487,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstSong: {fileID: 8300000, guid: 1cc113f513e85c14fbd4ee0ac7a5fd13, type: 3}
   secondSong: {fileID: 8300000, guid: 221a5e02da611ea45a397253e69194fd, type: 3}
+  earth: {fileID: 1841622373}
+  flag: {fileID: 753494727}
+  module: {fileID: 810919652}
 --- !u!4 &1625669984
 Transform:
   m_ObjectHideFlags: 0
@@ -13829,6 +13854,11 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1807781306}
   m_CullTransparentMesh: 0
+--- !u!1 &1841622373 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1091410002921250, guid: 4d44063189ae8574b9218ed72eea7b7d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1317843597}
 --- !u!1 &1857779784
 GameObject:
   m_ObjectHideFlags: 0

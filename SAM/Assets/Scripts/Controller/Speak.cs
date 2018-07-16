@@ -128,6 +128,7 @@ public class Speak : MonoBehaviour
             source.spatialBlend = 0.0f;
             source.loop = false;
             source.clip = clip;
+            source.priority = 0;
             source.Play();
 
             Destroy(audioObject, clip.length);
