@@ -67,44 +67,47 @@ public class EnvironmentController : MonoBehaviour {
 
     public void Manage(MessageResponse response, Dictionary<string, object> contexts)
     {
-        string intent = response.intents[0].intent;
-
-        if (intent.Equals("MUSIC_PLAY_COMMANDS") || intent.Equals("MUSIC_NEXT_COMMANDS") || intent.Equals("MUSIC_STOP_COMMANDS"))
-            MusicPlayer(contexts["music"].ToString());
-        else if(intent.Equals("ENVIRONMENT_GET_INFORMATION"))
+        if (response.intents[0].intent.Length != 0)
         {
-            switch (contexts["target"].ToString())
-            {
-                case "Earth":
+            string intent = response.intents[0].intent;
 
-                    if(!isEarthDiscovered && !earthTypeWriting.isStarted)
-                    {
-                        earthTypeWriting.StartCoroutine("TypeIn");
-                        earthAnimator.SetTrigger("FadeIn");
-                        isEarthDiscovered = true;
+            if (intent.Equals("MUSIC_PLAY_COMMANDS") || intent.Equals("MUSIC_NEXT_COMMANDS") || intent.Equals("MUSIC_STOP_COMMANDS"))
+                MusicPlayer(contexts["music"].ToString());
+            else if (intent.Equals("ENVIRONMENT_GET_INFORMATION"))
+            {
+                switch (contexts["target"].ToString())
+                {
+                    case "Earth":
+
+                        if (!isEarthDiscovered && !earthTypeWriting.isStarted)
+                        {
+                            earthTypeWriting.StartCoroutine("TypeIn");
+                            earthAnimator.SetTrigger("FadeIn");
+                            isEarthDiscovered = true;
+                            break;
+                        }
                         break;
-                    }
-                    break;
-                case "Flag":
-                    if (!isFlagDiscovered && !flagTypeWriting.isStarted)
-                    {
-                        flagTypeWriting.StartCoroutine("TypeIn");
-                        flagAnimator.SetTrigger("FadeIn");
-                        isFlagDiscovered = true;
+                    case "Flag":
+                        if (!isFlagDiscovered && !flagTypeWriting.isStarted)
+                        {
+                            flagTypeWriting.StartCoroutine("TypeIn");
+                            flagAnimator.SetTrigger("FadeIn");
+                            isFlagDiscovered = true;
+                            break;
+                        }
                         break;
-                    }
-                    break;
-                case "Module":
-                    if (!isModuleDiscovered && !moduleTypeWriting.isStarted)
-                    {
-                        moduleTypeWriting.StartCoroutine("TypeIn");
-                        moduleAnimator.SetTrigger("FadeIn");
-                        isModuleDiscovered = true;
+                    case "Module":
+                        if (!isModuleDiscovered && !moduleTypeWriting.isStarted)
+                        {
+                            moduleTypeWriting.StartCoroutine("TypeIn");
+                            moduleAnimator.SetTrigger("FadeIn");
+                            isModuleDiscovered = true;
+                            break;
+                        }
                         break;
-                    }
-                    break;
+                }
             }
-        }   
+        }
     }
 
     private void MusicPlayer(string context)
