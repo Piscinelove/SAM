@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/**
+* Rafael Peixoto 2018 - All Rights Reserved
+* Virtual Reality with AI chatbot - VRAI Project
+* 
+* This is the controller that plays the sound of typing
+* When a new object is discovered the title is displayed
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -33,6 +41,11 @@ public class TypeWriting : MonoBehaviour {
         textComponent = GetComponent<Text>();
     }
 
+    /*
+     *  TypeIn() coroutine method
+     *  Is called when a new object has been discovered
+     *  It plays the configured sound letter by letter
+     */
     public IEnumerator TypeIn()
     {
         isStarted = true;

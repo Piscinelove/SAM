@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/**
+* Rafael Peixoto 2018 - All Rights Reserved
+* Virtual Reality with AI chatbot - VRAI Project
+* 
+* This is the controller that analyse the sound from
+* the Text to Speech Service and change the size of the sound cubes
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -63,23 +71,27 @@ public class VoiceVisualisation : MonoBehaviour
 
     }
 
+    /*
+     *  SpawnLine() method
+     *  Store the transform values of the cubes in an array
+     */
     private void SpawnLine()
     {
         visualisationScale = new float[amountOfVisualisations];
         visualisationList = new Transform[amountOfVisualisations];
 
-        //GameObject[] cubes = GameObject.FindGameObjectsWithTag("SoundVisualcube");
         for (int i = 0; i < amountOfVisualisations; i++)
         {
-            //GameObject go = GameObject.CreatePrimitive(PrimitiveType.Cube) as GameObject;
-            //GameObject go = cubes[i];
             visualisationList[i] = cubes[i].transform;
-            //visualisationList[i].position = Vector3.right * i;
         }
     }
 
-
-    // Update is called once per frame
+    /*
+     *  Update() method
+     *  Update is called once per frame
+     *  Check if the Text to Speech is synthesizing
+     *  If it is, set it to current source
+     */
     private void Update()
     {
         if (speak.synthesizedVoice != null)
@@ -94,6 +106,11 @@ public class VoiceVisualisation : MonoBehaviour
 
     }
 
+    /*
+     *  UpdateVisual() method
+     *  Depending of the source sound valus the method
+     *  change the cubes size to visualise the sound in the game
+     */
     private void UpdateVisual()
     {
         int spectrumIndex = 0;
@@ -123,7 +140,10 @@ public class VoiceVisualisation : MonoBehaviour
     }
 
 
-
+    /*
+     *  AnalyseSound() method
+     *  It analyse the current sound source
+     */
     private void AnalyseSound()
     {
         // 0 is the channel

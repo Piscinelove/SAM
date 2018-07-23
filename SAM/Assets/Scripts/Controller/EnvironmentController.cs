@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/**
+* Rafael Peixoto 2018 - All Rights Reserved
+* Virtual Reality with AI chatbot - VRAI Project
+* 
+* This is the controller that allows to manage the environment
+* depending of the intent received form the chatbot.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using IBM.Watson.DeveloperCloud.Services.Conversation.v1;
@@ -65,8 +73,14 @@ public class EnvironmentController : MonoBehaviour {
 
     }
 
+    /*
+     *  Manage() method
+     *  When a response is received from the chatbot
+     *  Checks the intent of the response and manage the environment if needed
+     */
     public void Manage(MessageResponse response, Dictionary<string, object> contexts)
     {
+        // Test if the chatbot recognised an intent
         if (response.intents[0].intent.Length != 0)
         {
             string intent = response.intents[0].intent;
@@ -110,6 +124,11 @@ public class EnvironmentController : MonoBehaviour {
         }
     }
 
+    /*
+     *  MusicPlayer() method
+     *  Depending of the context sent by the chatbot
+     *  Change the music
+     */
     private void MusicPlayer(string context)
     {
         
@@ -129,10 +148,5 @@ public class EnvironmentController : MonoBehaviour {
                 break;
         }
        
-    }
-
-    private void DisplayObjectTitle()
-    {
-
     }
 }

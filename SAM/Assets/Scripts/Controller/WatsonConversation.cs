@@ -2,25 +2,6 @@
 * Rafael Peixoto 2018 - All Rights Reserved
 * Virtual Reality with AI chatbot - VRAI Project
 * 
-* NOTE: Based on example code from IBM which is subject to Apache license as noted below:
-* 
-* ---------------------------------------------------------------------------------------
-* Copyright 2015 IBM Corp. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*      http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-* 
-* ---------------------------------------------------------------------------------------
-* 
 * This is the controller of the chatbot for interact directly SAM AI Assistant Chatbot.
 * The following class send the message recorded of the current user to the chatbot configured by using
 * the IBM's Watson Conversation Service. 
@@ -80,6 +61,10 @@ public class WatsonConversation : MonoBehaviour
         CreateService();
     }
 
+    /*
+     *  CreateService() method
+     *  Create the Speech to Text service using credentials submited
+     */
     private void CreateService()
     {
         //  Create credential and instantiate service
@@ -98,11 +83,17 @@ public class WatsonConversation : MonoBehaviour
         conversation.VersionDate = versionDate;
     }
 
+    /*
+     *  AskQuestion() method
+     *  Ask the question received from the Speech to Text Service to the Conversation Service
+     *  Try to find the active camera's target and transmit it with the message to teh chatbot
+     */
     public void AskQuestion(string message)
     {
+        // The application is waiting for the response from the chatbot
         waitingForResponse = true;
         
-        //contexts["target"] = TargetObject.target;
+        // Find the active camera's target
         if(GameObject.Find("Camera (eye)") != null)
             contexts["target"] = GameObject.Find("Camera (eye)").GetComponent<TargetObject>().target;
         else if(GameObject.Find("CenterEyeAnchor") != null)
@@ -110,21 +101,28 @@ public class WatsonConversation : MonoBehaviour
         else if (GameObject.Find("Main Camera") != null)
             contexts["target"] = GameObject.Find("Main Camera").GetComponent<TargetObject>().target;
 
+        //  Build the message request
         MessageRequest messageRequest = new MessageRequest()
         {
             input = new Dictionary<string, object>()
             {
                 { "text", message }
             },
+            // Adds the target context if there is one
             context = contexts
         };
 
+        // If the send method fails
         if (!conversation.Message(OnMessage, OnFail, workspaceID, messageRequest))
             Log.Debug("ExampleConversation.AskQuestion()", "Failed to message!");
 
 
     }
 
+    /*
+     *  OnMessage() callback method
+     *  The method is called when a response from the chatbot is received
+     */
     private void OnMessage(object resp, Dictionary<string, object> customData)
     {
         Log.Debug("ExampleConversation.OnMessage()", "Conversation: Message Response: {0}", customData["json"].ToString());
@@ -151,16 +149,28 @@ public class WatsonConversation : MonoBehaviour
         else
             Log.Debug("ExampleConversation.OnMessage()", "Failed to get context");
 
+        //  Synthesize the message response
         textToSpeech.Synthesize(messageResponse.output.text[0]);
+        //  Send the message response to the EnvironmentManager script
         environment.Manage(messageResponse, contexts);
+        //  The chatbot has responded
         waitingForResponse = false;
     }
 
+    /*
+     *  OnFail() callback method
+     *  The method is called when there is a problem with connexion to the chatbot
+     */
     private void OnFail(RESTConnector.Error error, Dictionary<string, object> customData)
     {
         Log.Error("ExampleConversation.OnFail()", "Error received: {0}", error.ToString());
     }
 
+    /*
+     *  isWaitingForResponse() callback method
+     *  Public method for the SceneStreaming class
+     *  Returns the current state of the service
+     */
     public bool isWaitingForResponse()
     {
         return waitingForResponse;

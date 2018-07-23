@@ -2,25 +2,6 @@
 * Rafael Peixoto 2018 - All Rights Reserved
 * Virtual Reality with AI chatbot - VRAI Project
 * 
-* NOTE: Based on example code from IBM which is subject to Apache license as noted below:
-* 
-* ---------------------------------------------------------------------------------------
-* Copyright 2015 IBM Corp. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*      http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-* 
-* ---------------------------------------------------------------------------------------
-* 
 * This is the controller of the vocal synthetise allowing the chatbot to have a voice
 * The following class send the message to the the IBM's Watson Text To Speech Service. 
 * When the output is received, it transmits it to the IBM's Watson Text To Speech Service
@@ -85,6 +66,10 @@ public class Speak : MonoBehaviour
         CreateService();
     }
 
+    /*
+     *  CreateService() method
+     *  Create the Speech to Text service using credentials submited
+     */
     private void CreateService()
     {
         //  Create credential and instantiate service
@@ -102,6 +87,11 @@ public class Speak : MonoBehaviour
         service = new TextToSpeech(credentials);
     }
 
+    /*
+     *  Synthesize() method
+     *  Set the voice of the chatbot
+     *  Queue the request to the Text to Speech Service
+     */
     public void Synthesize(string message)
     {
         //  Synthesize
@@ -110,15 +100,26 @@ public class Speak : MonoBehaviour
         service.ToSpeech(HandleToSpeechCallback, OnFail, message, true);
     }
 
+    /*
+     *  HandleToSpeechCallback() callback method
+     *  When the service Text to Speech has synthesized the message
+     */
     void HandleToSpeechCallback(AudioClip clip, Dictionary<string, object> customData = null)
     {
+        // Start the PlayClip() coroutine
         StartCoroutine(PlayClip(clip));
     }
 
+    /*
+     *  PlayClip() coroutine method
+     *  Waits that the current voice speaking is destroyed before
+     *  playing the next one
+     */
     private IEnumerator PlayClip(AudioClip clip)
     {
         if (Application.isPlaying && clip != null)
         {
+            // If != null there is already voice speaking running
             while (GameObject.Find("/VoiceSpeaking") != null)
                 yield return null;
 

@@ -2,25 +2,6 @@
 * Rafael Peixoto 2018 - All Rights Reserved
 * Virtual Reality with AI chatbot - VRAI Project
 * 
-* NOTE: Based on example code from IBM which is subject to Apache license as noted below:
-* 
-* ---------------------------------------------------------------------------------------
-* Copyright 2015 IBM Corp. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*      http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-* 
-* ---------------------------------------------------------------------------------------
-* 
 * This is the main controller of the scene for interact by voice with the SAM AI Assistant.
 * The following class records the real-time broadcast from the device's microphone and transmits
 * it to the IBM Watson' Speech To Text Service. This service currently only offers a "always listening" mode.
@@ -90,6 +71,10 @@ public class SceneSpeechStreaming : MonoBehaviour
         CreateService();
     }
 
+    /*
+     *  CreateService() method
+     *  Create the Speech to Text service using credentials submited
+     */
     private void CreateService()
     {
         //  Create credential and instantiate service
@@ -107,10 +92,17 @@ public class SceneSpeechStreaming : MonoBehaviour
         speechToText = new SpeechToText(credentials);
         speechToText.StreamMultipart = true;
 
+        // Turn on active state of the service
         Active = true;
+        // Start the "always mode" streaming
         StartRecording();
     }
 
+    /*
+     *  Speech to Text Active Attribute
+     *  When the service is active the following configuration is used
+     *  for the service
+     */
     public bool Active
     {
         get { return speechToText.IsListening; }
@@ -140,16 +132,24 @@ public class SceneSpeechStreaming : MonoBehaviour
         }
     }
 
+    /*
+     *  StartRecording() method
+     *  Start recording if not already started
+     */
     private void StartRecording()
     {
+        // If not already recording
         if (recordingRoutine == 0)
         {
-            Debug.Log("work");
             UnityObjectUtil.StartDestroyQueue();
             recordingRoutine = Runnable.Run(RecordingHandler());
         }
     }
 
+    /*
+     *  StopRecording() method
+     *  Stop recording if not already stoped
+     */
     private void StopRecording()
     {
         if (recordingRoutine != 0)
@@ -160,6 +160,10 @@ public class SceneSpeechStreaming : MonoBehaviour
         }
     }
 
+    /*
+     *  OnError() method
+     *  Called when an error with the streaming occured
+     */
     private void OnError(string error)
     {
         Active = false;
@@ -312,6 +316,11 @@ public class SceneSpeechStreaming : MonoBehaviour
         yield break;
     }
 
+    /*
+     *  OnRecognize() callback method
+     *  This method is called when words are recognized by the Speech to Text Service
+     *  We only care about the final statement
+     */
     private void OnRecognize(SpeechRecognitionEvent result, Dictionary<string, object> customData)
     {
         if (result != null && result.results.Length > 0)
@@ -343,6 +352,10 @@ public class SceneSpeechStreaming : MonoBehaviour
         }
     }
 
+    /*
+     *  OnRecognizeSpeaker callback method
+     *  The method is called when words are recognized through the speaker
+     */
     private void OnRecognizeSpeaker(SpeakerRecognitionEvent result, Dictionary<string, object> customData)
     {
         if (result != null)
@@ -354,6 +367,10 @@ public class SceneSpeechStreaming : MonoBehaviour
         }
     }
 
+    /*
+     *  TransferRecording() coroutine methode
+     *  Waits for Conversation Service Response before asking a new question
+     */
     private IEnumerator TransferRecording(string text)
     {
         while (conversation.isWaitingForResponse())
