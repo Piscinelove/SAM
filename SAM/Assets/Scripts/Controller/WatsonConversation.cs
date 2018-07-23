@@ -103,7 +103,11 @@ public class WatsonConversation : MonoBehaviour
         waitingForResponse = true;
         
         //contexts["target"] = TargetObject.target;
-        contexts["target"] = GameObject.Find("Main Camera").GetComponent<TargetObject>().target;
+        if(GameObject.Find("Camera (eye)") != null)
+            contexts["target"] = GameObject.Find("CenterEyeAnchor").GetComponent<TargetObject>().target;
+        else if(GameObject.Find("CenterEyeAnchor") != null)
+            contexts["target"] = GameObject.Find("CenterEyeAnchor").GetComponent<TargetObject>().target;
+
         MessageRequest messageRequest = new MessageRequest()
         {
             input = new Dictionary<string, object>()
