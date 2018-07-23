@@ -151,7 +151,6 @@ public class WatsonConversation : MonoBehaviour
         else
             Log.Debug("ExampleConversation.OnMessage()", "Failed to get context");
 
-        //textToSpeech.Synthesize(messageResponse.output.text[0]);
         textToSpeech.Synthesize(messageResponse.output.text[0]);
         environment.Manage(messageResponse, contexts);
         waitingForResponse = false;

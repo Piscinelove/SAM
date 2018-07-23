@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2093765015}
-  m_IndirectSpecularColor: {r: 0.00020667736, g: 0.0002077789, b: 0.00020636307, a: 1}
+  m_IndirectSpecularColor: {r: 0.001090045, g: 0.00109294, b: 0.001090045, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -401,8 +401,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serviceURL: https://stream.watsonplatform.net/text-to-speech/api
-  username: 19b5cf9d-85c1-4749-b414-bcb40de6c167
-  password: CgHVp41NoxKB
+  username: 25798eab-6f4a-4cf0-a4b4-eeebb7bba099
+  password: SiqPgeotZtj2
 --- !u!4 &190765864
 Transform:
   m_ObjectHideFlags: 0
@@ -6739,11 +6739,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   comparison: 8
   apply: 1
---- !u!1 &730769970 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 146900, guid: 4d293c8e162f3874b982baadd71153d2,
-    type: 2}
-  m_PrefabInternal: {fileID: 759346774}
 --- !u!1 &752916115
 GameObject:
   m_ObjectHideFlags: 0
@@ -7233,11 +7228,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 413432, guid: 4d293c8e162f3874b982baadd71153d2,
     type: 2}
   m_PrefabInternal: {fileID: 759346774}
---- !u!1 &773190229 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 192944, guid: 4d293c8e162f3874b982baadd71153d2,
-    type: 2}
-  m_PrefabInternal: {fileID: 759346774}
 --- !u!1001 &808615833
 Prefab:
   m_ObjectHideFlags: 0
@@ -7440,8 +7430,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serviceURL: https://stream.watsonplatform.net/speech-to-text/api
-  username: 0f5f7970-32e4-441f-89a2-279d3b511b97
-  password: VPNtJkgDut2z
+  username: beb1cba7-7bc5-40a6-b98f-86107c6e524f
+  password: MvTgRhQONJMd
   language: en-US_BroadbandModel
   conversation: {fileID: 1726783571}
 --- !u!1 &869347064
@@ -7526,11 +7516,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   comparison: 8
   apply: 1
---- !u!1 &871263446 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 147176, guid: 4d293c8e162f3874b982baadd71153d2,
-    type: 2}
-  m_PrefabInternal: {fileID: 759346774}
 --- !u!1 &874592035
 GameObject:
   m_ObjectHideFlags: 0
@@ -9063,12 +9048,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoPopulateObjectReferences: 1
-  actualBoundaries: {fileID: 730769970}
-  actualHeadset: {fileID: 759346776}
-  actualLeftController: {fileID: 1636572261}
-  actualRightController: {fileID: 1375737368}
-  modelAliasLeftController: {fileID: 871263446}
-  modelAliasRightController: {fileID: 773190229}
+  actualBoundaries: {fileID: 0}
+  actualHeadset: {fileID: 0}
+  actualLeftController: {fileID: 0}
+  actualRightController: {fileID: 0}
+  modelAliasLeftController: {fileID: 0}
+  modelAliasRightController: {fileID: 0}
   cachedSystemSDKInfo:
     baseTypeName: VRTK.SDK_BaseSystem
     fallbackTypeName: VRTK.SDK_FallbackSystem
@@ -14300,10 +14285,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serviceURL: https://gateway.watsonplatform.net/assistant/api
-  workspaceID: 1220b192-377b-49c3-93a7-257ef4a26215
+  workspaceID: b171eeda-7436-4d71-b1bc-798b7baa2670
   versionDate: 2018-02-20
-  username: f5cebd57-3526-49bd-983d-259a68af46b4
-  password: fdh1qXW6KqGn
+  username: 7612d9ae-80f6-4734-ac11-3865111bc89c
+  password: qeqV74kZh3Ee
   textToSpeech: {fileID: 190765863}
   environment: {fileID: 1625669983}
 --- !u!4 &1726783572
