@@ -4,7 +4,7 @@
 QualitySettings:
   m_ObjectHideFlags: 0
   serializedVersion: 5
-  m_CurrentQuality: 2
+  m_CurrentQuality: 5
   m_QualitySettings:
   - serializedVersion: 2
     name: Fastest
@@ -41,6 +41,8 @@ QualitySettings:
     resolutionScalingFixedDPIFactor: 1
     excludedTargetPlatforms:
     - Android
+    - Standalone
+    - Windows Store Apps
   - serializedVersion: 2
     name: Fast
     pixelLightCount: 0
@@ -76,6 +78,10 @@ QualitySettings:
     resolutionScalingFixedDPIFactor: 1
     excludedTargetPlatforms:
     - Android
+    - iPhone
+    - Standalone
+    - Windows Store Apps
+    - WebGL
   - serializedVersion: 2
     name: Simple
     pixelLightCount: 1
@@ -109,7 +115,11 @@ QualitySettings:
     asyncUploadTimeSlice: 2
     asyncUploadBufferSize: 4
     resolutionScalingFixedDPIFactor: 1
-    excludedTargetPlatforms: []
+    excludedTargetPlatforms:
+    - iPhone
+    - Standalone
+    - Windows Store Apps
+    - WebGL
   - serializedVersion: 2
     name: Good
     pixelLightCount: 2
@@ -145,6 +155,10 @@ QualitySettings:
     resolutionScalingFixedDPIFactor: 1
     excludedTargetPlatforms:
     - Android
+    - iPhone
+    - Standalone
+    - Windows Store Apps
+    - WebGL
   - serializedVersion: 2
     name: Beautiful
     pixelLightCount: 3
@@ -180,6 +194,10 @@ QualitySettings:
     resolutionScalingFixedDPIFactor: 1
     excludedTargetPlatforms:
     - Android
+    - iPhone
+    - Standalone
+    - Windows Store Apps
+    - WebGL
   - serializedVersion: 2
     name: Fantastic
     pixelLightCount: 4
@@ -215,12 +233,14 @@ QualitySettings:
     resolutionScalingFixedDPIFactor: 1
     excludedTargetPlatforms:
     - Android
+    - iPhone
+    - WebGL
   m_PerPlatformDefaultQuality:
     Android: 2
     BlackBerry: 0
-    Standalone: 0
+    Standalone: 5
     WP8: 0
     Web: 0
     WebGL: 0
-    Windows Store Apps: 0
-    iPhone: 0
+    Windows Store Apps: 5
+    iPhone: 2
