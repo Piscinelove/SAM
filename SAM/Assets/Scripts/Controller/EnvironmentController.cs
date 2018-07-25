@@ -81,7 +81,7 @@ public class EnvironmentController : MonoBehaviour {
     public void Manage(MessageResponse response, Dictionary<string, object> contexts)
     {
         // Test if the chatbot recognised an intent
-        if (response.intents[0].intent.Length != 0)
+        if (response.intents.Length > 0)
         {
             string intent = response.intents[0].intent;
 
