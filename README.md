@@ -18,8 +18,13 @@ The final application offers the user a virtual reality experience allowing him 
 3. The application sends the text message from the IBM Watson Speech to Text service to the IBM Watson Conversation service. The application adds the user's current context to the message to determine what the user is currently viewing. The conversational agent executes the natural language understanding of the input and returns a response to the application.
 4. The conversational agent's response is then returned to the IBM Watson Text to Speech service to synthesize a voice message. The application reads the voice message as soon as it is received
 
-## TECHNICAL GUIDE
-
+## PREREQUISITE
+> **IDE** :
+1. Unity3D 5 Personal v2018.2.0f2
+2. VisualStudio Community v7.4.3 (RUNTIME .NET 4.x Equivalent)
+3. Java JDK v1.8.0_171
+4. Android NDK vR13b
+5. Android SDK v8.1 (Oreo)
 ### SUPPORTED HEADSETS
 > **INFO** : The project currently only supports HTC Vive and Oculus GO.
 ### STRUCTURE
