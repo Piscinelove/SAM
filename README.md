@@ -21,7 +21,7 @@ The final application offers the user a virtual reality experience allowing him 
 ## TECHNICAL GUIDE
 
 ### SUPPORTED HEADSETS
-> **INFO**: The project currently only supports HTC Vive and Oculus GO.
+> **INFO** : The project currently only supports HTC Vive and Oculus GO.
 ### STRUCTURE
 ```
   . 
@@ -45,5 +45,6 @@ The final application offers the user a virtual reality experience allowing him 
   │       └── Textures 
   └── .gitignore
 ```
-> **SDK**: [Oculus Utilities v1.27.0](https://developer.oculus.com/downloads/package/oculus-utilities-for-unity-5/) `Oculus`, [SteamVR v1.2.3](https://assetstore.unity.com/packages/templates/systems/steamvr-plugin-32647) `SteamVR`, [VRTK v3.3.0-alpha](https://github.com/thestonefox/VRTK) `VRTK`, [WATSON v2.5.0](https://github.com/watson-developer-cloud/unity-sdk) `Watson`
+> **SDK** : [Oculus Utilities v1.27.0](https://developer.oculus.com/downloads/package/oculus-utilities-for-unity-5/) `Oculus`, [SteamVR v1.2.3](https://assetstore.unity.com/packages/templates/systems/steamvr-plugin-32647) `SteamVR`, [VRTK v3.3.0-alpha](https://github.com/thestonefox/VRTK) `VRTK`, [WATSON v2.5.0](https://github.com/watson-developer-cloud/unity-sdk) `Watson`
+> **ASSETS** : [Moon Environment v2.0](https://assetstore.unity.com/packages/3d/environments/moon-environment-40424) `Moon`,[Neutron Solar System Pack v2.2](https://assetstore.unity.com/packages/3d/environments/sci-fi/neutron-solar-system-pack-20959) `SolarSystem`,[Cloth animation-based flag v1.0](https://assetstore.unity.com/packages/3d/props/exterior/cloth-animation-based-flag-65842) `Models`,[Apollo Lunar Module VR / AR / low-poly 3D model](https://www.cgtrader.com/3d-models/space/spaceship/apollo-lunar-module-b19344473680a608f6216314a9df63a2) `Models`,
 
