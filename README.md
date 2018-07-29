@@ -19,7 +19,7 @@ The final application offers the user a virtual reality experience allowing him 
 4. The conversational agent's response is then returned to the IBM Watson Text to Speech service to synthesize a voice message. The application reads the voice message as soon as it is received
 
 ## PREREQUISITE
-> **IDE** :
+> **DEVELOPMENT ENVIRONMENT** :
 1. Unity3D 5 Personal v2018.2.0f2
 2. VisualStudio Community v7.4.3 (RUNTIME .NET 4.x Equivalent)
 3. Java JDK v1.8.0_171
@@ -53,3 +53,20 @@ The final application offers the user a virtual reality experience allowing him 
 > **SDK** : [Oculus Utilities v1.27.0](https://developer.oculus.com/downloads/package/oculus-utilities-for-unity-5/) `Oculus`, [SteamVR v1.2.3](https://assetstore.unity.com/packages/templates/systems/steamvr-plugin-32647) `SteamVR`, [VRTK v3.3.0-alpha](https://github.com/thestonefox/VRTK) `VRTK`, [WATSON v2.5.0](https://github.com/watson-developer-cloud/unity-sdk) `Watson`
 > **ASSETS** : [Moon Environment v2.0](https://assetstore.unity.com/packages/3d/environments/moon-environment-40424) `Moon`,[Neutron Solar System Pack v2.2](https://assetstore.unity.com/packages/3d/environments/sci-fi/neutron-solar-system-pack-20959) `SolarSystem`,[Cloth animation-based flag v1.0](https://assetstore.unity.com/packages/3d/props/exterior/cloth-animation-based-flag-65842) `Models`,[Apollo Lunar Module VR / AR / low-poly 3D model](https://www.cgtrader.com/3d-models/space/spaceship/apollo-lunar-module-b19344473680a608f6216314a9df63a2) `Models`,
 
+### INSTALLATION
+```
+git clone https://github.com/Piscinelove/SAM
+```
+### CONFIGURATION
+> **INFO** : We do not provide our credentials and IBM Watson Conversation service workspace on this GitHub platform. The latter was hand-delivered to the Bachelor's follow-up teacher.
+1. Log in to IBM Cloud at https://console.bluemix.net.
+2. Select the services you want to use.
+3. Select Service credentials.
+4. Select View credentials to access your credentials.
+5. Save it.
+6. Enter credentials in the scripts inspector using the services.
+
+### SCREENSHOTS
+![function1](https://user-images.githubusercontent.com/19705441/43369229-ae725358-936a-11e8-8f9d-7967a09b86aa.png)
+![function3](https://user-images.githubusercontent.com/19705441/43369230-b2fdd398-936a-11e8-9a86-7979c4d7f54d.png)
+![function4](https://user-images.githubusercontent.com/19705441/43369232-ba0a260a-936a-11e8-8ac9-67e5702dc93d.png)
