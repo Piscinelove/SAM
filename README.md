@@ -18,8 +18,11 @@ The final application offers the user a virtual reality experience allowing him 
 3. The application sends the text message from the IBM Watson Speech to Text service to the IBM Watson Conversation service. The application adds the user's current context to the message to determine what the user is currently viewing. The conversational agent executes the natural language understanding of the input and returns a response to the application.
 4. The conversational agent's response is then returned to the IBM Watson Text to Speech service to synthesize a voice message. The application reads the voice message as soon as it is received
 
-### TREE STRUCTURE
+## TECHNICAL GUIDE
 
+### SUPPORTED HEADSETS
+> **INFO**: The project currently only supports HTC Vive and Oculus GO.
+### STRUCTURE
 ```
   . 
   ├── README.md               
@@ -30,11 +33,11 @@ The final application offers the user a virtual reality experience allowing him 
   │       └── Materials 
   │       └── Models 
   │       └── Moon 
-  │       └── Oculus 
-  │       └── SteamVR 
-  │       └── VRTK 
-  │       └── Watson 
-  │       └── Scripts 
+  │       └── Oculus         #The folder contains the Oculus Utilities SDK to support Oculus GO. 
+  │       └── SteamVR        #The folder contains the SteamVR SDK to support HTC Vive.
+  │       └── VRTK           #The folder contains the VRTK SDK to support multiplatform.
+  │       └── Watson         #The folder contains the IBM Watson Unity SDK to support all IBM Watson services
+  │       └── Scripts        #The folder contains all scripts created for the application
   │       └── Settings 
   │       └── Scenes 
   │       └── Skybox 
@@ -42,3 +45,5 @@ The final application offers the user a virtual reality experience allowing him 
   │       └── Textures 
   └── .gitignore
 ```
+> **SDK**: [Oculus Utilities v1.27.0](https://developer.oculus.com/downloads/package/oculus-utilities-for-unity-5/) `Oculus`, [SteamVR v1.2.3](https://assetstore.unity.com/packages/templates/systems/steamvr-plugin-32647) `SteamVR`, [VRTK v3.3.0-alpha](https://github.com/thestonefox/VRTK) `VRTK`, [WATSON v2.5.0](https://github.com/watson-developer-cloud/unity-sdk) `Watson`
+
