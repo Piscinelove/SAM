@@ -20,23 +20,25 @@ The final application offers the user a virtual reality experience allowing him 
 
 ### TREE STRUCTURE
 
-. 
-├── README.md               
-├── SAM 
-│   └── Assets 
-│       └── Animation 
-│       └── Audio 
-│       └── Materials 
-│       └── Models 
-│       └── Moon 
-│       └── Oculus 
-│       └── SteamVR 
-│       └── VRTK 
-│       └── Watson 
-│       └── Scripts 
-│       └── Settings 
-│       └── Scenes 
-│       └── Skybox 
-│       └── SolarSystem 
-│       └── Textures 
-└── .gitignore   
+```
+  . 
+  ├── README.md               
+  ├── SAM 
+  │   └── Assets 
+  │       └── Animation 
+  │       └── Audio 
+  │       └── Materials 
+  │       └── Models 
+  │       └── Moon 
+  │       └── Oculus 
+  │       └── SteamVR 
+  │       └── VRTK 
+  │       └── Watson 
+  │       └── Scripts 
+  │       └── Settings 
+  │       └── Scenes 
+  │       └── Skybox 
+  │       └── SolarSystem 
+  │       └── Textures 
+  └── .gitignore
+```
